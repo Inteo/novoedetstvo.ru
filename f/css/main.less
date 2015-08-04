@@ -3,6 +3,11 @@ html, body {
   margin: 0;
   padding: 0;
 }
+* {
+	box-sizing: border-box;
+  -moz-box-sizing: border-box; /*Firefox 1-3*/
+  -webkit-box-sizing: border-box; /* Safari */
+}
 @blue: #29b6f6;
 @green: #26a69a;
 @pink: #ff4081;
@@ -13,9 +18,10 @@ html, body {
   -ms-transition: @prop @time @ease;
   transition: @prop @time @ease;
 }
+@small: ~"(max-width: 1199px)";
 @tablet: ~"(max-width: 991px)";
 body {
-	font: 16px/30px 'PT Sans', sans-serif;
+	font: 14px/30px 'Open Sans', sans-serif;
 	color: @blue;
 }
 a {
@@ -79,16 +85,51 @@ ul {
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
 }
+.icon-inteo {
+	width: 85px;
+	height: 16px;
+	background-position: 0 0px;
+}
+a:hover .icon-inteo {
+	background-position: 0 -16px;
+}
+.icon-cart {
+	width: 16px;
+	height: 12px;
+	background-position: -85px 0;
+	margin: -3px 8px 0 0;
+}
+.icon-catalog {
+	width: 10px;
+	height: 10px;
+	background-position: 0 -32px;
+	margin: -3px 10px 0 0;
+}
+a:hover .icon-catalog {
+	background-position: -10px -32px;
+}
+.icon-face {
+	width: 18px;
+	height: 22px;
+	background-position: -163px 0;
+	margin-top: -3px;
+}
+.icon-phone {
+	width: 14px;
+	height: 14px;
+	background-position: -165px -24px;
+	margin: -6px 5px 0 0;
+}
 .wrap {  
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 0 -330px 0;
-	padding: 0;  
-	min-width: 320px;
+	margin: 0 0 -250px 0;
+	padding: 0;
+	min-width: 991px;  
 	&:after {  
 		content: '';
-		height: 330px;
+		height: 250px;
 	  margin: 0;
 	  padding: 0; 
 	} 
@@ -96,27 +137,247 @@ ul {
 .holder {
 	max-width: 1600px;
 	margin: 0 auto;
-	padding: 25px;
+	padding: 25px 50px;
 	position: relative;
 }
 .header {
+	height: 155px;
+	position: relative;
+	&:after {
+		position: absolute;
+	  bottom: -7px;
+	  left: 0;
+	  display: block;
+	  width: 100%;
+	  height: 7px;
+	  content: '';
+	  background: url('../../f/i/wave2.png') repeat-x;
+	  z-index: 10;
+	}
+	&__controls {
+		float: right;
+		padding-top: 5px;
+		text-align: right;
+	}
+	&__btns {
+		margin-bottom: 28px;
+	}
+	&__contacts-link {
+		font-weight: bold;
+		margin-right: 25px;
+		font-size: 16px;
+		@media @small {
+			font-size: 14px;
+			line-height: 30px;
+		}
+	}
+}
+.main-menu {
+	margin-left: -25px;
+	padding-top: 70px;
+	float: left;
+	@media @small {
+		margin-left: -10px;
+	}
+	& li {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 25px;
+		@media @small {
+			margin-left: 10px;
+		}
+		& a {
+			font-weight: bold;
+			font-size: 16px;
+			@media @small {
+				font-size: 14px;
+			}
+		}
+	}
+}
+.cart-btn {
+	border: 2px solid @pink;
+	border-radius: 36px;
+	padding: 8px 12px 8px 15px;
+	&__num {
+		background: #e3f2fd;
+		color: @blue;
+		border-radius: 10px;
+		padding: 0 9px;
+		font-weight: bold;
+	}
+	&_header {
+		margin-right: 5px;
+	}
+	& .icon-cart {
+		margin-right: 12px;
+	}
+}
+.person-btn {
+	border: 2px solid @blue;
+	border-radius: 36px;
+	padding: 8px 10px;
+}
+.phone {
+	display: inline-block;
+	vertical-align: top;
+	&__num {
+		font-size: 20px;
+		font-weight: bold;
+		color: @pink;
+	}
+	&__text {
+		font-size: 10px;
+		margin-top: -2px;
+		color: @pink;
+		line-height: 10px;
+	}
+}
+.content {
 	
 }
+.main-btn {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	min-height: 700px;
+	overflow: hidden;
+	.transition (border-color, .25s, linear);
+	&_parents {
+		background: url(../../f/i/pattern1.jpg) repeat;
+		border-bottom: 60px solid #039be5;
+		&:hover {
+			border-bottom: 60px solid #0288d1;
+		}
+		&:after {
+			background: url(../../f/i/pattern1-2.jpg) repeat;
+		}
+	}
+	&_educators {
+		background: url(../../f/i/pattern2.jpg) repeat;
+		border-bottom: 60px solid #009688;
+		&:hover {
+			border-bottom: 60px solid #00796b;
+		}
+		&:after {
+			background: url(../../f/i/pattern2-2.jpg) repeat;
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		.transition (opacity, .25s, linear);
+	}
+	&:hover:after {
+		opacity: 1;
+	}
+	&__holder {
+		max-width: 700px;
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		padding-top: 110px;
+		text-align: center;
+	}
+	&__title {
+		color: #fff;
+		display: block;
+		font-size: 40px;
+		font-weight: bold;
+		margin-bottom: 30px;
+		position: relative;
+		z-index: 100;
+	}
+	&__text {
+		color: #fff;
+		max-width: 50%;
+		display: inline-block;
+		position: relative;
+		z-index: 100;
+	}
+	&__img {
+		position: absolute;
+		bottom: -2px;
+		right: 50%;
+		margin-right: -370px;
+		width: 585px;
+		max-width: 9999px;
+		z-index: 100;
+	}
+	&_educators &__img {
+		left: 50%;
+		width: 666px;
+		margin-left: -420px;
+	}
+	&_educators &__holder {
+		left: 0;
+	}
+}
+.main-logo {
+	position: absolute;
+	left: 50%;
+	margin-left: -80px;
+	top: 25px;
+	@media @small {
+		width: 160px;
+		top: 35px;
+	}
+}
 .footer {  
-	height: 330px;
+	min-height: 250px;
   margin: 0;
   padding: 0;
 	background: #37474f;
-	min-width: 320px;
+	min-width: 991px;
+	position: relative;
+	&:before {
+		position: absolute;
+	  top: -10px;
+	  left: 0;
+	  display: block;
+	  width: 100%;
+	  height: 10px;
+	  content: '';
+	  background: url('../../f/i/wave.png') repeat-x;
+	}
 	&__holder {
-		padding-top: 0;
-		padding-bottom: 0;
-		height: 100%;
+		padding-top: 40px; 
 	}
 	&__wrap {
 		display: table;
-		width: 100%;
+		width: 70%;
 		height: 100%;
+		float: left;
+		@media @small {
+			float: none;
+			width: 100%;
+		}
+	}
+	&__move {
+		float: left;
+		width: 30%;
+		position: relative;
+		text-align: justify;
+		&:after {
+			content: '';
+			width: 100%;
+			overflow: hidden;
+			height: 0;
+			display: inline-block;
+			vertical-align: top;
+		}
+		@media @small {
+			float: none;
+			width: 35%;
+		}
 	}
 	&__row {
 		display: table-row;
@@ -124,25 +385,85 @@ ul {
 	}
 	&__cell {
 		display: table-cell;
-		padding: 25px;
 		&:first-child {
 			padding-left: 0;
 		}
 	}
 	&__title {
-		margin-bottom: 10px;
-		& a {
-			font-weight: bold;
+		margin-bottom: 15px;
+		font-size: 16px;
+		line-height: 25px;
+		font-weight: bold;
+		&_ib {
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+			margin-bottom: 0;
+		}
+		&_cart {
+			color: @pink;
 		}
 	}
 	&__menu {
 		list-style: none;
 		margin-bottom: 15px;
+		& li {
+			margin-bottom: 12px;
+		}
 		& li a {
-			color: #8b9292;
+			color: @blue;
 			font-size: 14px;
+			line-height: 20px;
 			&:hover {
 				color: @pink;
+			}
+		}
+	}
+	&__cell_green &__title a,
+	&__cell_green &__menu li a {
+		color: @green;
+		&:hover {
+			color: @pink;
+		}
+	}
+}
+.developer {
+	text-align: right;
+	position: absolute;
+	right: 50px;
+	bottom: 35px;
+	@media @small {
+		bottom: 50px;
+	}
+	& span {
+		display: block;
+	}
+}
+.social {
+	&__title {
+		margin-bottom: 10px;
+	}
+	&__btn {
+		display: inline-block;
+		vertical-align: top;
+		width: 20px;
+		height: 20px;
+		margin-right: 10px;
+		background: url(../../f/i/icons.png);
+		background-position: -103px 0;
+		&_facebook:hover {
+			background-position: -103px -20px;
+		}
+		&_vk {
+			background-position: -123px 0;
+			&:hover {
+				background-position: -123px -20px;
+			}
+		}
+		&_odn {
+			background-position: -143px 0;
+			&:hover {
+				background-position: -143px -20px;
 			}
 		}
 	}
