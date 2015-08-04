@@ -1,0 +1,149 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+@blue: #29b6f6;
+@green: #26a69a;
+@pink: #ff4081;
+.transition (@prop: all, @time: 1s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+@tablet: ~"(max-width: 991px)";
+body {
+	font: 16px/30px 'PT Sans', sans-serif;
+	color: @blue;
+}
+a {
+	color: @blue;
+	text-decoration: none;
+	&:focus {
+		outline: 0;
+		color: @blue;
+		text-decoration: none;
+	}
+	&:active {
+		color: @blue;
+		text-decoration: none;
+	}
+	&:hover,
+	&.pseudo-hover {
+		text-decoration: none;
+		color: @pink;
+	}
+}
+.pseudo {
+	text-decoration: none!important;
+	cursor: pointer; 
+	border-bottom: 1px dotted;
+}
+h1, 
+h2 {
+	font: 500 50px/60px 'Roboto', sans-serif;
+	color: @blue;
+	margin: 0;
+}
+h2 {
+	font-size: 30px;
+}
+p {
+	line-height: 30px;
+	margin: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: middle;
+  background-image: url("../../f/i/icons.png");
+  background-repeat: no-repeat;
+}
+[class^='iconize-'], [class*=' iconize-'] {
+  position: relative;
+  display: inline-block;
+}
+[class^='iconize-']:before, [class*=' iconize-']:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: '';
+  background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
+}
+.wrap {  
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 0 -330px 0;
+	padding: 0;  
+	min-width: 320px;
+	&:after {  
+		content: '';
+		height: 330px;
+	  margin: 0;
+	  padding: 0; 
+	} 
+}
+.holder {
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 25px;
+	position: relative;
+}
+.header {
+	
+}
+.footer {  
+	height: 330px;
+  margin: 0;
+  padding: 0;
+	background: #37474f;
+	min-width: 320px;
+	&__holder {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 100%;
+	}
+	&__wrap {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+	&__row {
+		display: table-row;
+		width: 100%;
+	}
+	&__cell {
+		display: table-cell;
+		padding: 25px;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+	&__title {
+		margin-bottom: 10px;
+		& a {
+			font-weight: bold;
+		}
+	}
+	&__menu {
+		list-style: none;
+		margin-bottom: 15px;
+		& li a {
+			color: #8b9292;
+			font-size: 14px;
+			&:hover {
+				color: @pink;
+			}
+		}
+	}
+}
