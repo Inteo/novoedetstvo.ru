@@ -155,7 +155,7 @@ a:hover .icon-catalog {
 	  z-index: 10;
 	}
 	&__controls {
-		float: right;
+		//float: right;
 		padding-top: 5px;
 		text-align: right;
 	}
@@ -199,6 +199,9 @@ a:hover .icon-catalog {
 	border: 2px solid @pink;
 	border-radius: 36px;
 	padding: 8px 12px 8px 15px;
+	&:hover {
+		background: @pink;
+	}
 	&__num {
 		background: #e3f2fd;
 		color: @blue;
@@ -206,17 +209,51 @@ a:hover .icon-catalog {
 		padding: 0 9px;
 		font-weight: bold;
 	}
+	&:hover &__num {
+		background: #e91e63;
+		color: #fff;
+	}
 	&_header {
 		margin-right: 5px;
 	}
 	& .icon-cart {
 		margin-right: 12px;
 	}
+	&:hover .icon-cart {
+		background-position: -86px -15px;
+	}
+	& .slide-btn__text {
+		padding-left: 0 !important;
+		color: @pink;
+	}
 }
 .person-btn {
 	border: 2px solid @blue;
 	border-radius: 36px;
 	padding: 8px 10px;
+	&:hover {
+		background: @blue;
+	}
+	&:hover .icon-face {
+		background-position: -182px 0;
+	}
+}
+.slide-btn {
+	&__text {
+		max-width: 0;
+		display: inline-block;
+		vertical-align: top;
+		overflow: hidden;
+		white-space: nowrap;
+		font-weight: bold;
+		.transition(max-width, .4s, cubic-bezier(0, 1.05, 0, 1));
+	}
+	&:hover &__text {
+		max-width: 1000px;
+		color: #fff;
+		padding: 0 10px;
+		.transition(max-width, .5s, ease);
+	}
 }
 .phone {
 	display: inline-block;
