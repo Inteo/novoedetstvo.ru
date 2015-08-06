@@ -104,6 +104,9 @@ a:hover .icon-inteo {
 	height: 10px;
 	background-position: 0 -32px;
 	margin: -3px 10px 0 0;
+	&_green {
+		background-position: -20px -32px;
+	}
 }
 a:hover .icon-catalog {
 	background-position: -10px -32px;
@@ -113,12 +116,37 @@ a:hover .icon-catalog {
 	height: 22px;
 	background-position: -163px 0;
 	margin-top: -3px;
+	&_green {
+		background-position: -182px -22px;
+	}
 }
 .icon-phone {
 	width: 14px;
 	height: 14px;
 	background-position: -165px -24px;
 	margin: -6px 5px 0 0;
+}
+.icon-parent-face {
+	margin: -3px 0 0 0;
+	width: 20px;
+	height: 24px;
+	background-position: 0 -44px;
+}
+.icon-educator-face {
+	margin: -3px 0 0 0;
+	width: 20px;
+	height: 25px;
+	background-position: -20px -44px;
+}
+.icon-larrow {
+	margin: -2px 0 0 0;
+	width: 10px;
+	height: 15px;
+	background-position: -46px -41px;
+	margin-left: 15px;
+}
+a:hover .icon-larrow {
+	background-position: -55px -41px;
 }
 .wrap {  
 	min-height: 100%;
@@ -151,7 +179,7 @@ a:hover .icon-catalog {
 	  width: 100%;
 	  height: 7px;
 	  content: '';
-	  background: url('../../f/i/wave2.png') repeat-x;
+	  background: url('../../f/i/waves/wave2.png') repeat-x;
 	  z-index: 10;
 	}
 	&__controls {
@@ -166,10 +194,25 @@ a:hover .icon-catalog {
 		font-weight: bold;
 		margin-right: 25px;
 		font-size: 16px;
+		&_green {
+			color: @green;
+			&:hover {
+				color: @pink;
+			}
+		}
 		@media @small {
 			font-size: 14px;
 			line-height: 30px;
 		}
+	}
+	&__menu-wrap {
+		float: left;
+		& .main-menu {
+			padding-top: 0;
+		}
+	}
+	&__whom {
+		margin-bottom: 38px;
 	}
 }
 .main-menu {
@@ -179,10 +222,11 @@ a:hover .icon-catalog {
 	@media @small {
 		margin-left: -10px;
 	}
-	& li {
+	&__item {
 		display: inline-block;
 		vertical-align: top;
 		margin-left: 25px;
+		position: relative;
 		@media @small {
 			margin-left: 10px;
 		}
@@ -193,6 +237,82 @@ a:hover .icon-catalog {
 				font-size: 14px;
 			}
 		}
+		&:hover {
+			& .main-submenu {
+				&__wrap {
+					display: block;
+				}
+				&:before {
+					display: block;
+				}
+			}
+		}
+	}
+	&_green li a {
+		color: @green;
+		&:hover {
+			color: @pink;
+		}
+	}
+}
+.main-submenu {
+	padding-top: 10px;
+	position: absolute;
+	top: 20px;
+	left: -40px;
+	z-index: 120;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 40px;
+		z-index: 10;
+		width: 0;
+		display: none;
+		height: 0;
+		border: 5px solid transparent;
+		border-bottom-color: #e3f2fd;  
+		border-top: 0;
+	}
+	&__wrap {
+		position: relative;
+		border-radius: 10px;
+		background: #e3f2fd;
+		overflow: hidden;
+		display: none;
+		-webkit-box-shadow: 0px 6px 9px 0px rgba(50, 50, 50, 0.65);
+		-moz-box-shadow:    0px 6px 9px 0px rgba(50, 50, 50, 0.65);
+		box-shadow:         0px 6px 9px 0px rgba(50, 50, 50, 0.65);
+	}
+	&__holder {
+		padding: 30px 40px 10px;
+		columns: 2;
+	  -moz-columns: 2;
+	  -webkit-columns: 2;
+	  column-gap: 40px;
+	  -moz-column-gap: 40px;
+	  -webkit-column-gap: 40px;
+	}
+	&__list {
+		list-style: none;
+		margin-bottom: 20px;
+		display: inline-block;
+		vertical-align: top;
+		& li {			
+			line-height: 30px;
+			& a {
+				font-size: 14px;
+				font-weight: normal;
+				white-space: nowrap;
+			}
+		}
+	}
+	&__title,
+	&__title a {
+		font-weight: bold !important;
+		font-size: 16px !important;
+		color: @green;
+		margin-bottom: 10px;
 	}
 }
 .cart-btn {
@@ -209,6 +329,9 @@ a:hover .icon-catalog {
 		padding: 0 9px;
 		font-weight: bold;
 	}
+	&_green &__num {
+		color: @green;
+	}
 	&:hover &__num {
 		background: #e91e63;
 		color: #fff;
@@ -224,15 +347,21 @@ a:hover .icon-catalog {
 	}
 	& .slide-btn__text {
 		padding-left: 0 !important;
-		color: @pink;
 	}
 }
 .person-btn {
 	border: 2px solid @blue;
 	border-radius: 36px;
 	padding: 8px 10px;
+	&_green {
+		color: @green;
+		border: 2px solid @green;
+	}
 	&:hover {
 		background: @blue;
+	}
+	&_green:hover {
+		background: @green;
 	}
 	&:hover .icon-face {
 		background-position: -182px 0;
@@ -240,19 +369,39 @@ a:hover .icon-catalog {
 }
 .slide-btn {
 	&__text {
+		color: #fff;
 		max-width: 0;
 		display: inline-block;
 		vertical-align: top;
 		overflow: hidden;
 		white-space: nowrap;
 		font-weight: bold;
-		.transition(max-width, .4s, cubic-bezier(0, 1.05, 0, 1));
+		opacity: 0;
+		.transition(all, .4s, cubic-bezier(0, 1.05, 0, 1));
 	}
 	&:hover &__text {
 		max-width: 1000px;
 		color: #fff;
 		padding: 0 10px;
-		.transition(max-width, .5s, ease);
+		opacity: 1;
+		.transition(all, .5s, ease);
+	}
+}
+.whom-btns {
+	&__item {
+		padding: 8px 10px;
+		&_parents {
+			border: 2px solid @blue;
+			border-radius: 36px 0 0 36px;
+			&:hover .slide-btn__text {
+				color: @blue;
+			}
+		}
+		&_educators {
+			border: 2px solid @green;
+			background: @green;
+			border-radius: 0 36px 36px 0;
+		}
 	}
 }
 .phone {
@@ -282,23 +431,23 @@ a:hover .icon-catalog {
 	overflow: hidden;
 	.transition (border-color, .25s, linear);
 	&_parents {
-		background: #29b6f6 url(../../f/i/pattern1.jpg) repeat;
+		background: #29b6f6 url(../../f/i/patterns/1.jpg) repeat;
 		border-bottom: 50px solid #039be5;
 		&:hover {
 			border-bottom: 50px solid #0288d1;
 		}
 		&:after {
-			background: url(../../f/i/pattern1-2.jpg) repeat;
+			background: url(../../f/i/patterns/1-2.jpg) repeat;
 		}
 	}
 	&_educators {
-		background: #4db6ac url(../../f/i/pattern2.jpg) repeat;
+		background: #4db6ac url(../../f/i/patterns/2.jpg) repeat;
 		border-bottom: 50px solid #009688;
 		&:hover {
 			border-bottom: 50px solid #00796b;
 		}
 		&:after {
-			background: url(../../f/i/pattern2-2.jpg) repeat;
+			background: url(../../f/i/patterns/2-2.jpg) repeat;
 		}
 	}
 	&:after {
@@ -368,6 +517,191 @@ a:hover .icon-catalog {
 		top: 35px;
 	}
 }
+.decision {
+	min-height: 610px;
+	position: relative;
+	&:after {
+		position: absolute;
+	  bottom: -7px;
+	  right: 0;
+	  display: block;
+	  width: 50%;
+	  height: 7px;
+	  content: '';
+	  background: url('../../f/i/waves/wave3.png') 14px 0 repeat-x;
+	  z-index: 10;
+	}
+	&:before {
+		position: absolute;
+	  bottom: -7px;
+	  left: 0;
+	  display: block;
+	  width: 50%;
+	  height: 7px;
+	  content: '';
+	  background: url('../../f/i/waves/wave4.png') repeat-x;
+	  z-index: 10;
+	}
+	&__img {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		width: 50%;
+		overflow: hidden;
+		min-height: 610px;
+		border-bottom: 50px solid #009688;
+		& img {
+			position: absolute;
+			bottom: 0;
+			max-width: 9999px;
+			left: 50%;
+		}
+		&_left img {
+			right: 50%;
+			left: auto;
+		}
+	}
+	&__holder {
+		max-width: 800px;
+	}
+	&__info {
+		display: inline-block;
+		vertical-align: middle;
+		width: 50%;
+		padding-left: 110px;
+		@media @small {
+			padding: 0 70px;
+		}
+	}
+	&_dou {
+		background: @green;
+	}
+	&_dou &__img {
+		background: url(../../f/i/patterns/2.jpg) repeat;
+	}
+	&_dou &__img img {
+		margin-right: -270px;
+		width: 685px;
+	}
+	&_fgos {
+		background: #7e57c2;
+		&:before {
+			background: url('../../f/i/waves/wave5.png') repeat-x;
+		}
+		&:after {
+			background: url('../../f/i/waves/wave6.png') 14px 0 repeat-x;
+		}
+	}
+	&_fgos &__img {
+		background: url(../../f/i/patterns/3.jpg) repeat;
+		border-bottom: 50px solid #6538b6;
+	}
+	&_fgos &__img img {
+		margin-left: -230px;
+		width: 499px;
+	}
+	&_key {
+		background: #43a047;
+		&:before {
+			background: url('../../f/i/waves/wave7.png') repeat-x;
+		}
+		&:after {
+			background: url('../../f/i/waves/wave8.png') 14px 0 repeat-x;
+		}
+	}
+	&_key &__img {
+		background: url(../../f/i/patterns/4.jpg) repeat;
+		border-bottom: 50px solid #2e7d32;
+	}
+	&_key &__img img {
+		margin-right: -230px;
+		width: 472px;
+	}
+	&_prod {
+		background: #28b6f6;
+		&:before {
+			background: url('../../f/i/waves/wave9.png') repeat-x;
+		}
+		&:after {
+			background: url('../../f/i/waves/wave10.png') 14px 0 repeat-x;
+		}
+	}
+	&_prod &__img {
+		background: url(../../f/i/patterns/1.jpg) repeat;
+		border-bottom: 50px solid #039be6;
+	}
+	&_prod &__img img {
+		margin-left: -215px;
+		width: 471px;
+	}
+	&_info {
+		background: #3f51b5;
+		&:after,
+		&:before {
+			display: none;
+		}
+	}
+	&_info &__img {
+		background: url(../../f/i/patterns/5.jpg) repeat;
+		border: 0;
+	}
+	&_info &__img img {
+		margin-right: -230px;
+		width: 472px;
+		bottom: -10px;
+	}
+	&__title {
+		font-size: 40px;
+		line-height: 50px;
+		font-weight: bold;
+		margin-bottom: 30px;
+		color: #fff;
+		padding-right: 50px;
+	}
+	&__text {
+		color: #fff;
+		margin-bottom: 50px;
+		font-size: 16px;
+		padding-right: 90px;
+	}
+	&__btn {
+		border: 2px solid #fff;
+		border-radius: 36px;
+		padding: 8px 10px 8px 30px;
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+		white-space: nowrap;
+		&:hover {
+			background: #fff;
+			color: @pink;
+		}
+		&-wrap {
+			display: inline-block;
+			vertical-align: top;
+			@media @small {
+				display: block;
+				margin-bottom: 25px;
+			}
+		}
+		&_left {
+			border-radius: 36px 0 0 36px;
+			padding: 8px 30px 8px 30px;
+			@media @small {
+				border-radius: 36px;
+			}
+		}
+		&_right {
+			border-radius: 0 36px 36px 0;
+			padding: 8px 30px 8px 30px;
+			margin-left: -2px;
+			@media @small {
+				border-radius: 36px;
+				margin-left: 0;
+			}
+		}
+	}
+}
 .footer {  
 	min-height: 250px;
   margin: 0;
@@ -383,7 +717,7 @@ a:hover .icon-catalog {
 	  width: 100%;
 	  height: 10px;
 	  content: '';
-	  background: url('../../f/i/wave.png') repeat-x;
+	  background: url('../../f/i/waves/wave.png') repeat-x;
 	}
 	&__holder {
 		padding-top: 40px; 
