@@ -173,13 +173,9 @@ a:hover .icon-larrow {
 	position: relative;
 	&:hover .slide-btn .slide-btn__text {
 		max-width: 1000px;
-		color: #fff;
-		//padding: 0 10px;
+		padding: 0 10px;
 		opacity: 1;
-		.transition(all, .5s, ease);
-	}
-	&:hover .cart-btn {
-
+		.transition(max-width, .5s, ease);
 	}
 	&:after {
 		position: absolute;
@@ -332,6 +328,7 @@ a:hover .icon-larrow {
 	color: @pink;
 	&:hover {
 		background: @pink;
+		color: #fff;
 	}
 	&__num {
 		background: #e3f2fd;
@@ -370,6 +367,7 @@ a:hover .icon-larrow {
 	}
 	&:hover {
 		background: @blue;
+		color: #fff;
 	}
 	&_green:hover {
 		background: @green;
@@ -380,31 +378,45 @@ a:hover .icon-larrow {
 }
 .slide-btn {
 	&__text {
-		//max-width: 0;
+		max-width: 0;
 		display: inline-block;
 		vertical-align: top;
 		overflow: hidden;
 		white-space: nowrap;
 		font-weight: bold;
 		opacity: 0;
-		padding: 0 10px;
-		.transition(all, .4s, cubic-bezier(0, 1.05, 0, 1));
+		.transition(max-width, .4s, cubic-bezier(0, 1.05, 0, 1));
 	}
 }
 .whom-btns {
 	&__item {
+		display: inline;
 		padding: 8px 10px;
 		&_parents {
 			border: 2px solid @blue;
 			border-radius: 36px 0 0 36px;
-			&:hover .slide-btn__text {
-				color: @blue;
+			a&:hover {
+				color: @pink;
+				border: 2px solid @pink;
 			}
+		}
+		&_parents&_active {
+			background: @blue;
+			color: #fff;
 		}
 		&_educators {
 			border: 2px solid @green;
-			background: @green;
 			border-radius: 0 36px 36px 0;
+			color: @green;
+			margin-left: -2px;
+			a&:hover {
+				color: @pink;
+				border: 2px solid @pink;
+			}
+		}
+		&_educators&_active {
+			background: @green;
+			color: #fff;
 		}
 	}
 }
