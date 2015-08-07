@@ -85,6 +85,15 @@ ul {
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
 }
+.icon-down-arrow {
+	width: 9px;
+	height: 7px;
+	margin: -3px 0 0 0px;
+	background-position: -72px -38px;
+}
+a:hover .icon-down-arrow {
+	background-position: -72px -45px;
+}
 .icon-inteo {
 	width: 85px;
 	height: 16px;
@@ -146,7 +155,7 @@ a:hover .icon-catalog {
 	margin-left: 15px;
 }
 a:hover .icon-larrow {
-	background-position: -55px -41px;
+	background-position: -56px -41px;
 }
 .wrap {  
 	min-height: 100%;
@@ -292,12 +301,17 @@ a:hover .icon-larrow {
 	}
 	&__holder {
 		padding: 30px 40px 10px;
-		columns: 2;
-	  -moz-columns: 2;
-	  -webkit-columns: 2;
-	  column-gap: 40px;
-	  -moz-column-gap: 40px;
-	  -webkit-column-gap: 40px;
+		display: table;
+		width: 100%;
+		margin-left: -40px
+	}
+	&__row {
+		display: table-row;
+		width: 100%;
+	}
+	&__cell {
+		display: table-cell;
+		padding-left: 40px;
 	}
 	&__list {
 		list-style: none;
@@ -309,7 +323,6 @@ a:hover .icon-larrow {
 			& a {
 				font-size: 14px;
 				font-weight: normal;
-				white-space: nowrap;
 			}
 		}
 	}
@@ -319,6 +332,7 @@ a:hover .icon-larrow {
 		font-size: 16px !important;
 		color: @green;
 		margin-bottom: 10px;
+		white-space: nowrap;
 	}
 }
 .cart-btn {
@@ -539,29 +553,23 @@ a:hover .icon-larrow {
 	&:after {
 		position: absolute;
 	  bottom: -7px;
-	  right: 0;
+	  left: 50%;
 	  display: block;
 	  width: 50%;
 	  height: 7px;
 	  content: '';
-	  background: url('../../f/i/waves/wave3.png') 1px 0 repeat-x;
+	  background: url('../../f/i/waves/wave3.png') left top repeat-x;
 	  z-index: 10;
-	  @media (max-width: 1280px) {
-	  	background-position: 20px 0;
-	  }
-	  @media (max-width: 1024px) {
-	  	background-position: 0 0;
-	  }
 	}
 	&:before {
 		position: absolute;
 	  bottom: -7px;
-	  left: 0;
+	  right: 50%;
 	  display: block;
 	  width: 50%;
 	  height: 7px;
 	  content: '';
-	  background: url('../../f/i/waves/wave4.png') repeat-x;
+	  background: url('../../f/i/waves/wave4.png') right top repeat-x;
 	  z-index: 10;
 	}
 	&__img {
@@ -599,7 +607,7 @@ a:hover .icon-larrow {
 		background: @green;
 	}
 	&_dou &__img {
-		background: url(../../f/i/patterns/2.jpg) repeat;
+		background: url(../../f/i/patterns/2.jpg) right top repeat;
 	}
 	&_dou &__img img {
 		margin-right: -270px;
@@ -608,16 +616,10 @@ a:hover .icon-larrow {
 	&_fgos {
 		background: #7e57c2;
 		&:before {
-			background: url('../../f/i/waves/wave5.png') repeat-x;
+			background: url('../../f/i/waves/wave5.png') right top repeat-x;
 		}
 		&:after {
-			background: url('../../f/i/waves/wave6.png') 1px 0 repeat-x;
-			@media (max-width: 1280px) {
-		  	background-position: 20px 0;
-		  }
-		  @media (max-width: 1024px) {
-		  	background-position: 0 0;
-		  }
+			background: url('../../f/i/waves/wave6.png') repeat-x;
 		}
 	}
 	&_fgos &__img {
@@ -631,20 +633,14 @@ a:hover .icon-larrow {
 	&_key {
 		background: #43a047;
 		&:before {
-			background: url('../../f/i/waves/wave7.png') repeat-x;
+			background: url('../../f/i/waves/wave7.png') right top repeat-x;
 		}
 		&:after {
-			background: url('../../f/i/waves/wave8.png') 1px 0 repeat-x;
-			@media (max-width: 1280px) {
-		  	background-position: 20px 0;
-		  }
-		  @media (max-width: 1024px) {
-		  	background-position: 0 0;
-		  }
+			background: url('../../f/i/waves/wave8.png') repeat-x;
 		}
 	}
 	&_key &__img {
-		background: url(../../f/i/patterns/4.jpg) repeat;
+		background: url(../../f/i/patterns/4.jpg) right top repeat;
 		border-bottom: 50px solid #2e7d32;
 	}
 	&_key &__img img {
@@ -654,16 +650,10 @@ a:hover .icon-larrow {
 	&_prod {
 		background: #28b6f6;
 		&:before {
-			background: url('../../f/i/waves/wave9.png') repeat-x;
+			background: url('../../f/i/waves/wave9.png') right top repeat-x;
 		}
 		&:after {
-			background: url('../../f/i/waves/wave10.png') 1px 0 repeat-x;
-			@media (max-width: 1280px) {
-		  	background-position: 20px 0;
-		  }
-		  @media (max-width: 1024px) {
-		  	background-position: 0 0;
-		  }
+			background: url('../../f/i/waves/wave10.png') repeat-x;
 		}
 	}
 	&_prod &__img {
@@ -682,7 +672,7 @@ a:hover .icon-larrow {
 		}
 	}
 	&_info &__img {
-		background: url(../../f/i/patterns/5.jpg) repeat;
+		background: url(../../f/i/patterns/5.jpg) right top repeat;
 		border: 0;
 	}
 	&_info &__img img {
