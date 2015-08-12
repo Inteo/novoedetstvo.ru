@@ -304,7 +304,7 @@ a:hover .icon-right-arrow2 {
 		max-width: 1000px;
 		padding: 0 10px;
 		opacity: 1;
-		.transition(max-width, .5s, ease);
+		.transition(max-width, 2.5s, linear);
 	}
 	&:after {
 		position: absolute;
@@ -535,7 +535,7 @@ a:hover .icon-right-arrow2 {
 		white-space: nowrap;
 		font-weight: bold;
 		opacity: 0;
-		.transition(max-width, .4s, cubic-bezier(0, 1.05, 0, 1));
+		.transition(all, 2s, cubic-bezier(0, 1.05, 0, 1));
 	}
 }
 .whom-btns {
@@ -940,22 +940,25 @@ a:hover .icon-right-arrow2 {
 			border-bottom: 2px solid #e3f2fd;
 			border-radius: 0 0 10px 10px;
 		}
-		&_sub:hover {
+		 &_sub:hover {
 			border-right: none;
 			margin-right: -5px;
-		}
-		&_sub:hover .catalog-submenu {
-			display: block;
+		} 
+		&_sub.maintainHover {
+			border-right: none;
+			margin-right: -5px;
 		}
 	}
 	&__link {
 		padding: 14px 25px 14px 15px;
 		display: block;
 	}
-	&__item_sub:hover &__link {
+	&__item_sub:hover &__link,
+	&_sub.maintainHover &__link{
 		color: @pink;
 	} 
-	&__item_sub:hover &__link:before {
+	&__item_sub:hover &__link:before,
+	&_sub.maintainHover &__link:before {
 		right: 17px;
 		background-position: -56px -41px;
 	}
