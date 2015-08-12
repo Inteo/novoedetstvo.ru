@@ -14,11 +14,26 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="f/js/jquery-1.11.3.min.js"></script>
+    <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <link rel="stylesheet" href="f/css/bootstrap.min.css">
     <script src="f/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="f/css/main.css">
     <script src="f/js/common.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
+    <script>
+      $(document).ready(function(){
+        $(".catalog-slider__holder").carouFredSel({
+          responsive: true,
+          pagination: '.catalog-slider__pager',
+          scroll: {
+            duration: 450,
+            timeoutDuration: 5000,
+            fx: 'crossfade'
+          },
+        });
+      });
+    </script>
   </head>
 <body>
   <div class="wrap clearfix">  
@@ -53,107 +68,380 @@
     </header>
     <div class="content">
       <div class="holder clearfix">
-        <div class="catalog-menu">
-          <p class="catalog-menu__title"><i class="icon-big-catalog"></i>Каталог</p>
-          <ul class="catalog-menu__list">
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Мебель и системы хранения</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Напольные покрытия</a></li>
-            <li class="catalog-menu__item catalog-menu__item_sub">
-              <a href="#" class="iconize-right-arrow catalog-menu__link">Предметно <br>развивающая среда</a>
-              <div class="catalog-submenu">
-                <div class="catalog-submenu__wrap">
-                  <div class="catalog-submenu__holder">
-                    <div class="catalog-submenu__row">
-                      <div class="catalog-submenu__cell">
-                        <ul class="catalog-submenu__list catalog-submenu__list_sep">
-                          <li class="catalog-submenu__title"><a href="#">Игровая деятельность</a></li>
-                          <li><a href="#">Игрушки-персонажи</a></li>
-                          <li><a href="#">Ролевые атрибуты</a></li>
-                          <li><a href="#">Игровые наборы и комплекты</a></li>
-                          <li><a href="#">Игровые модули</a></li>
-                          <li><a href="#">Досуговые игры</a></li>
-                        </ul>
-                        <ul class="catalog-submenu__list">
-                          <li class="catalog-submenu__title"><a href="#">Конструкторы</a></li>
-                          <li><a href="#">Деревянные</a></li>
-                          <li><a href="#">Пластмассовые</a></li>
-                          <li><a href="#">Мягкие</a></li>
-                          <li><a href="#">Конструкторы «LEGO»</a></li>
-                          <li><a href="#">Строительные наборы</a></li>
-                        </ul>
+        <div class="content__table">
+          <div class="content__row">
+            <div class="content__cell content__cell_menu">
+              <div class="catalog-menu">
+                <p class="catalog-menu__title"><i class="icon-big-catalog"></i>Каталог</p>
+                <ul class="catalog-menu__list">
+                  <li class="catalog-menu__item"><a href="#" class="iconize-right-arrow catalog-menu__link">Мебель и системы хранения</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="iconize-right-arrow catalog-menu__link">Напольные покрытия</a></li>
+                  <li class="catalog-menu__item catalog-menu__item_sub">
+                    <a href="#" class="iconize-right-arrow catalog-menu__link">Предметно <br>развивающая среда</a>
+                    <div class="catalog-submenu">
+                      <div class="catalog-submenu__wrap">
+                        <div class="catalog-submenu__holder">
+                          <div class="catalog-submenu__row">
+                            <div class="catalog-submenu__cell">
+                              <ul class="catalog-submenu__list catalog-submenu__list_sep">
+                                <li class="catalog-submenu__title"><a href="#">Игровая деятельность</a></li>
+                                <li><a href="#">Игрушки-персонажи</a></li>
+                                <li><a href="#">Ролевые атрибуты</a></li>
+                                <li><a href="#">Игровые наборы и комплекты</a></li>
+                                <li><a href="#">Игровые модули</a></li>
+                                <li><a href="#">Досуговые игры</a></li>
+                              </ul>
+                              <ul class="catalog-submenu__list">
+                                <li class="catalog-submenu__title"><a href="#">Конструкторы</a></li>
+                                <li><a href="#">Деревянные</a></li>
+                                <li><a href="#">Пластмассовые</a></li>
+                                <li><a href="#">Мягкие</a></li>
+                                <li><a href="#">Конструкторы «LEGO»</a></li>
+                                <li><a href="#">Строительные наборы</a></li>
+                              </ul>
+                            </div>
+                            <div class="catalog-submenu__cell">
+                              <ul class="catalog-submenu__list catalog-submenu__list_sep">
+                                <li class="catalog-submenu__title"><a href="#">Наборы для творчества</a></li>
+                                <li><a href="#">Для рисования</a></li>
+                                <li><a href="#">Для лепки</a></li>
+                                <li><a href="#">Для аппликации</a></li>
+                              </ul>
+                              <ul class="catalog-submenu__list">
+                                <li class="catalog-submenu__title"><a href="#">Театральная деятельность</a></li>
+                                <li><a href="#">Пальчиковые куклы</a></li>
+                                <li><a href="#">Перчаточные куклы</a></li>
+                                <li><a href="#">Куклы марионетки</a></li>
+                                <li><a href="#">Ширмы театральные</a></li>
+                                <li><a href="#">Ростовые куклы</a></li>
+                                <li><a href="#">Детские театральные костюмы</a></li>
+                              </ul>
+                            </div>
+                            <div class="catalog-submenu__cell">
+                              <ul class="catalog-submenu__list catalog-submenu__list_sep">
+                                <li class="catalog-submenu__title"><a href="#">Сенсомоторное развитие</a></li>
+                                <li><a href="#">Пирамидки</a></li>
+                                <li><a href="#">Вкладыши</a></li>
+                                <li><a href="#">Народные игрушки</a></li>
+                                <li><a href="#">Картинки и кубики</a></li>
+                                <li><a href="#">Мозаика</a></li>
+                                <li><a href="#">Игры шнуровки</a></li>
+                                <li><a href="#">Пазлы</a></li>
+                                <li><a href="#">Лабиринты</a></li>
+                                <li><a href="#">Разрезные картинки</a></li>
+                                <li><a href="#">Сортеры</a></li>
+                              </ul>
+                              <p class="catalog-submenu__title"><a href="#">Детские музыкальные инструменты</a></p>
+                            </div>
+                            <div class="catalog-submenu__cell">
+                              <ul class="catalog-submenu__list catalog-submenu__list_sep">
+                                <li class="catalog-submenu__title"><a href="#">Наглядно дидактический материал и пособия</a></li>
+                                <li><a href="#">Логические игры</a></li>
+                                <li><a href="#">Речевое развитие</a></li>
+                                <li><a href="#">Обучение грамоте</a></li>
+                                <li><a href="#">Математическое представление</a></li>
+                                <li><a href="#">Знакомство с окружающим миром</a></li>
+                                <li><a href="#">ПДД и ОБЖ</a></li>
+                                <li><a href="#">Социалное воспитание</a></li>
+                                <li><a href="#">Исследовательская деятельность</a></li>
+                              </ul>
+                              <p class="catalog-submenu__title"><a href="#">Игры с песком и водой</a></p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="catalog-submenu__cell">
-                        <ul class="catalog-submenu__list catalog-submenu__list_sep">
-                          <li class="catalog-submenu__title"><a href="#">Наборы для творчества</a></li>
-                          <li><a href="#">Для рисования</a></li>
-                          <li><a href="#">Для лепки</a></li>
-                          <li><a href="#">Для аппликации</a></li>
-                        </ul>
-                        <ul class="catalog-submenu__list">
-                          <li class="catalog-submenu__title"><a href="#">Театральная деятельность</a></li>
-                          <li><a href="#">Пальчиковые куклы</a></li>
-                          <li><a href="#">Перчаточные куклы</a></li>
-                          <li><a href="#">Куклы марионетки</a></li>
-                          <li><a href="#">Ширмы театральные</a></li>
-                          <li><a href="#">Ростовые куклы</a></li>
-                          <li><a href="#">Детские театральные костюмы</a></li>
-                        </ul>
+                    </div>
+                  </li>
+                  <li class="catalog-menu__item"><a href="#" class="iconize-right-arrow catalog-menu__link">Авторские методики раннего развития</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Сенсорная комната</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="iconize-right-arrow catalog-menu__link">Песочная терапия</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Интерактивное оборудование</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Малые формы</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Уличное оборудование<br> и инвентарь</a></li>
+                  <li class="catalog-menu__item"><a href="#" class="iconize-right-arrow catalog-menu__link">Спортивное оборудование</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="content__main content__cell">
+              <form class="catalog-search">
+                <button id="catalog-search-submit" class="catalog-search__submit iconize-search" value=""></button>
+                <div class="catalog-search__input-wrap">
+                  <label for="input-name" class="input-hint">
+                    <span class="input-hint">Что будем искать? Например, <a href="#"> наборы для лепки</a>.</span>
+                  </label> 
+                  <input class="catalog-search__input input" type="text" id="input-name" value="">
+                  <span class="clear-text"></span>
+                </div>
+              </form>
+              <div class="catalog-slider">
+                <div class="catalog-slider__btns">
+                  <a href="#" class="catalog-slider__promo catalog-slider__btn">
+                    <span>Скидки <br>и акции</span>
+                    <img src="f/i/slider-btns/1.png" alt="">
+                  </a>
+                  <a href="#" class="catalog-slider__qst catalog-slider__btn">
+                    <span>Задать <br> вопрос <br> эксперту</span>
+                    <img src="f/i/slider-btns/2.png" alt="">
+                  </a>
+                </div>
+                <div class="catalog-slider__wrap">
+                  <div class="catalog-slider__holder">
+                    <div class="catalog-slider__item catalog-slider__item_cras">
+                      <div class="catalog-slider__info">
+                        <img src="f/i/cras-logo.png" alt="" class="catalog-slider__logo">
+                        <p class="catalog-slider__text">Интерактивный игровой центр «Cras Cubos»</p>
+                        <a href="#" class="catalog-slider__more white-btn">Подробнее<i class="icon-right-arrow"></i></a>
+                     </div><div class="catalog-slider__img">
+                        <img src="f/i/slider-imgs/1.png" alt="">
                       </div>
-                      <div class="catalog-submenu__cell">
-                        <ul class="catalog-submenu__list catalog-submenu__list_sep">
-                          <li class="catalog-submenu__title"><a href="#">Сенсомоторное развитие</a></li>
-                          <li><a href="#">Пирамидки</a></li>
-                          <li><a href="#">Вкладыши</a></li>
-                          <li><a href="#">Народные игрушки</a></li>
-                          <li><a href="#">Картинки и кубики</a></li>
-                          <li><a href="#">Мозаика</a></li>
-                          <li><a href="#">Игры шнуровки</a></li>
-                          <li><a href="#">Пазлы</a></li>
-                          <li><a href="#">Лабиринты</a></li>
-                          <li><a href="#">Разрезные картинки</a></li>
-                          <li><a href="#">Сортеры</a></li>
-                        </ul>
-                        <p class="catalog-submenu__title"><a href="#">Детские музыкальные инструменты</a></p>
+                    </div>
+                    <div class="catalog-slider__item catalog-slider__item_temp">
+                      <div class="catalog-slider__info">
+                        <img src="f/i/cras-logo.png" alt="" class="catalog-slider__logo">
+                        <p class="catalog-slider__text">Интерактивный игровой центр «Cras Cubos»</p>
+                        <a href="#" class="catalog-slider__more white-btn">Подробнее<i class="icon-right-arrow"></i></a>
+                     </div><div class="catalog-slider__img">
+                        <img src="f/i/slider-imgs/1.png" alt="">
                       </div>
-                      <div class="catalog-submenu__cell">
-                        <ul class="catalog-submenu__list catalog-submenu__list_sep">
-                          <li class="catalog-submenu__title"><a href="#">Наглядно дидактический материал и пособия</a></li>
-                          <li><a href="#">Логические игры</a></li>
-                          <li><a href="#">Речевое развитие</a></li>
-                          <li><a href="#">Обучение грамоте</a></li>
-                          <li><a href="#">Математическое представление</a></li>
-                          <li><a href="#">Знакомство с окружающим миром</a></li>
-                          <li><a href="#">ПДД и ОБЖ</a></li>
-                          <li><a href="#">Социалное воспитание</a></li>
-                          <li><a href="#">Исследовательская деятельность</a></li>
-                        </ul>
-                        <p class="catalog-submenu__title"><a href="#">Игры с песком и водой</a></p>
+                    </div>
+                    <div class="catalog-slider__item catalog-slider__item_temp2">
+                      <div class="catalog-slider__info">
+                        <img src="f/i/cras-logo.png" alt="" class="catalog-slider__logo">
+                        <p class="catalog-slider__text">Интерактивный игровой центр «Cras Cubos»</p>
+                        <a href="#" class="catalog-slider__more white-btn">Подробнее<i class="icon-right-arrow"></i></a>
+                     </div><div class="catalog-slider__img">
+                        <img src="f/i/slider-imgs/1.png" alt="">
                       </div>
                     </div>
                   </div>
+                  <div class="catalog-slider__pager"></div>
                 </div>
               </div>
-            </li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Авторские методики раннего развития</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Сенсорная комната</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Песочная терапия</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Интерактивное оборудование</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Малые формы</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Уличное оборудование<br> и инвентарь</a></li>
-            <li class="catalog-menu__item"><a href="#" class="catalog-menu__link">Спортивное оборудование</a></li>
-          </ul>
-        </div>
-        <div class="content__main">
-          <form class="catalog-search">
-            <button id="catalog-search-submit" class="catalog-search__submit iconize-search" value=""></button>
-            <div class="catalog-search__input-wrap">
-              <label for="input-name" class="input-hint">
-                <span class="input-hint">Что будем искать? Например, <a href="#"> наборы для лепки</a>.</span>
-              </label> 
-              <input class="catalog-search__input input" type="text" id="input-name" value="">
-              <span class="clear-text"></span>
+              <div class="catalog">
+                <p class="catalog__title"><a href="#"><i class="icon-heart"></i>Популярные</a></p>
+                <div class="catalog__holder">
+                  <div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Лабиринт «Мышка»</span>
+                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Ботинки обучающие</span>
+                      <span class="catalog__price">1 590 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
+                      <span class="catalog__brand">МДИ</span>
+                      <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
+                      <span class="catalog__price">500 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
+                      <span class="catalog__brand">МДИ</span>
+                      <span class="catalog__name">Лабиринт № 1</span>
+                      <span class="catalog__price">600 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Лабиринт «Мышка»</span>
+                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="catalog">
+                <p class="catalog__title"><a href="#"><i class="icon-percent"></i>Выгодно</a></p>
+                <div class="catalog__holder">
+                  <div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__discount">-20%</span>
+                      <span class="catalog__img"><img src="f/i/catalog/5.jpg" alt=""></span>
+                      <span class="catalog__brand">МДИ</span>
+                      <span class="catalog__name">Пирамидки-счет Шары</span>
+                      <span class="catalog__old-price">950 <b class="rub">&#8399;</b></span><span class="catalog__price">700 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__discount">-20%</span>
+                      <span class="catalog__img"><img src="f/i/catalog/6.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Игрушка деревянная «Активный куб»</span>
+                      <span class="catalog__old-price">750 <b class="rub">&#8399;</b></span><span class="catalog__price">590 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__discount">-50%</span>
+                      <span class="catalog__img"><img src="f/i/catalog/7.jpg" alt=""></span>
+                      <span class="catalog__brand">Hape</span>
+                      <span class="catalog__name">Игрушка деревянная «Лошадка»</span>
+                      <span class="catalog__old-price">3 550 <b class="rub">&#8399;</b></span><span class="catalog__price">2 590 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__discount">-30%</span>
+                      <span class="catalog__img"><img src="f/i/catalog/8.jpg" alt=""></span>
+                      <span class="catalog__brand">Playgro</span>
+                      <span class="catalog__name">Развивающая игрушка «Шар»</span>
+                      <span class="catalog__old-price">3 550 <b class="rub">&#8399;</b></span><span class="catalog__price">2 590 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__discount">-20%</span>
+                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Лабиринт «Мышка»</span>
+                      <span class="catalog__old-price">320 <b class="rub">&#8399;</b></span><span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="catalog">
+                <p class="catalog__title"><a href="#"><i class="icon-star"></i>Рекомендуем</a></p>
+                <div class="catalog__holder">
+                  <div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Лабиринт «Мышка»</span>
+                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Ботинки обучающие</span>
+                      <span class="catalog__price">1 590 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
+                      <span class="catalog__brand">МДИ</span>
+                      <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
+                      <span class="catalog__price">500 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
+                      <span class="catalog__brand">МДИ</span>
+                      <span class="catalog__name">Лабиринт № 1</span>
+                      <span class="catalog__price">600 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div><div class="catalog__item">
+                    <a href="#" class="catalog__link">
+                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                      <span class="catalog__brand">K's Kids</span>
+                      <span class="catalog__name">Лабиринт «Мышка»</span>
+                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="features">
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/1.png" alt="">
+                  </div>
+                  <p class="features__title">Гарантия возврата</p>
+                  <p class="features__text">в течении 2 недель после покупки товара</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/2.png" alt="">
+                  </div>
+                  <p class="features__title">Безопасность платежей</p>
+                  <p class="features__text">и личных данных при оформление заказа</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/3.png" alt="">
+                  </div>
+                  <p class="features__title">Бонусы при покупке</p>
+                  <p class="features__text">получайте скидки на следующие покупки</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/4.png" alt="">
+                  </div>
+                  <p class="features__title">Лучшая цена</p>
+                  <p class="features__text">частые акции, скидки и распродажи</p>
+                </div>
+              </div>
+              <div class="catalog-btns">
+                <div class="catalog-btns__item catalog-btns__item_pay">
+                  <a href="#" class="catalog-btns__link">
+                    <span class="catalog-btns__info">
+                      <b class="catalog-btns__title">Доставка и оплата</b>
+                      <b class="catalog-btns__text">Мы осуществляем доставку товара в течении 7-10 дней после подтверждения заказа</b>
+                    </span><span class="catalog-btns__img">
+                      <img src="f/i/catalog-btns/1.png" alt="">
+                    </span>
+                  </a>
+                </div><div class="catalog-btns__item catalog-btns__item_educators">
+                  <a href="#" class="catalog-btns__link">
+                    <span class="catalog-btns__info">
+                      <b class="catalog-btns__title">Педагогам</b>
+                      <b class="catalog-btns__text">Комплексные решения по оснащению ДОУ, решения по ФГОС, а так же учебная литература, статьи и программы</b>
+                    </span><span class="catalog-btns__img">
+                      <img src="f/i/catalog-btns/2.png" alt="">
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
-          </form>
+          </div>
+        </div>
+      </div>
+      <div class="parents-help">
+        <div class="holder">
+          <p class="parents-help__title"><i class="icon-parents"></i>Родителям в помощь</p>
+          <div class="parents-help__holder">
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-text"></i></span>
+                <span class="parents-help__text">Советы по воспитанию сложного ребенка</span>
+              </a>
+            </div>
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-video"></i></span>
+                <span class="parents-help__text">Как сохранить «здоровой» психику ребёнка</span>
+              </a>
+            </div>
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-text"></i></span>
+                <span class="parents-help__text">Проблемы адаптации ребенка в условиях ДОУ</span>
+              </a>
+            </div>
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-video"></i></span>
+                <span class="parents-help__text">Развитие моторики у детей дошкольного возраста</span>
+              </a>
+            </div>
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-text"></i></span>
+                <span class="parents-help__text">Вопросы детей и как правильно на них отвечать</span>
+              </a>
+            </div>
+            <div class="parents-help__item">
+              <a href="#" class="parents-help__link">
+                <span class="parents-help__ico"><i class="icon-video"></i></span>
+                <span class="parents-help__text">Советы по воспитанию сложного ребенка</span>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="blue-btn">Все материалы<i class="icon-right-arrow2"></i></a>
         </div>
       </div>
     </div>
