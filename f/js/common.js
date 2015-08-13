@@ -1,3 +1,11 @@
+function activateSubmenu(row) {
+  $(row).find(".catalog-submenu").css("display", "block");
+  $(row).addClass("maintainHover");
+}
+function deactivateSubmenu(row) {
+  $(row).find(".catalog-submenu").css("display", "none");
+  $(row).removeClass("maintainHover");
+}
 $(function(){
  $('.catalog-search__input').each(function() {
    if ($(this).val() != '') {
@@ -34,4 +42,9 @@ $(function(){
      $(this).parent().find('.clear-text').removeClass('ct-show');
    }
  });
+  var $menu = $(".catalog-menu__list");
+  $menu.menuAim({
+      activate: activateSubmenu,
+      deactivate: deactivateSubmenu
+  });
 })
