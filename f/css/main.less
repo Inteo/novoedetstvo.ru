@@ -1453,6 +1453,11 @@ a:hover .icon-right-arrow2 {
 		max-height: 400px;
 		margin-bottom: 15px;
 	}
+	&_list &__holder {
+		max-height: 99999px;
+		overflow: visible;
+		margin-bottom: 40px;
+	}
 	&__item {
 		display: inline-block;
 		vertical-align: top;
@@ -1465,6 +1470,10 @@ a:hover .icon-right-arrow2 {
 		@media (max-width: 1100px) {
 			width: 33.333333%;
 		}
+	}
+	&_list &__item {
+		display: block;
+		width: 100%;
 	}
 	&__link {
 		height: 360px;
@@ -1480,6 +1489,10 @@ a:hover .icon-right-arrow2 {
 			box-shadow:         0px 6px 15px 0px rgba(50, 50, 50, 0.35);
 		}
 	}
+	&_list &__link {
+		height: 220px;
+		padding: 0;
+	}
 	&__img {
 		display: block;
 		min-height: 195px;
@@ -1493,6 +1506,22 @@ a:hover .icon-right-arrow2 {
 			right: 0;
 			max-width: 100%;
 		}
+	}
+	&_list &__img {
+		float: left;
+		width: 180px;
+		min-height: 0;
+		padding: 20px;
+		height: 100%;
+		& img {
+			max-width: 100%;
+		}
+	}
+	&_list &__info {
+		overflow: hidden;
+		display: block;
+		text-align: left;
+		padding: 20px 30px 20px 20px;
 	}
 	&__brand {
 		color: #455a64;
@@ -1508,6 +1537,12 @@ a:hover .icon-right-arrow2 {
 			font-size: 14px;
 		}
 	}
+	&_list &__name {
+		font-size: 20px;
+		font-weight: bold;
+		font-style: normal;
+		margin-bottom: 30px;
+	}
 	a&__link:hover &__name {
 		color: @pink;
 	}
@@ -1517,6 +1552,21 @@ a:hover .icon-right-arrow2 {
 		color: @blue;
 		font-weight: bold;
 	}
+	&_list &__price {
+		font-style: normal;
+		display: block;
+		line-height: 20px;
+	}
+	&__price-wrap {
+		float: right;
+		display: block;
+		width: 150px;
+		vertical-align: top;
+		border-left: 2px solid #f1f8fe;
+		height: 100%;
+		padding: 20px;
+		text-align: center;
+	}
 	&__old-price {
 		font-size: 16px;
 		line-height: 40px;
@@ -1524,6 +1574,7 @@ a:hover .icon-right-arrow2 {
 		margin-right: 10px;
 		position: relative;
 		overflow: hidden;
+		text-align: center;
 		&:before {
 			content: '';
 			height: 1px;
@@ -1536,6 +1587,10 @@ a:hover .icon-right-arrow2 {
 			background: @blue;
 		}
 	}
+	&_list &__old-price {
+		font-style: normal;
+		display: inline-block;
+	}
 	&__discount {
 		position: absolute;
 		top: 10px;
@@ -1544,6 +1599,48 @@ a:hover .icon-right-arrow2 {
 		color: @pink;
 		font-weight: bold;
 		z-index: 3;
+	}
+	&_list &__discount {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		top: 0;
+	}
+}
+.info-line {
+	display: block;
+	position: relative;
+	z-index: 1;
+	&:before {
+		position: absolute;
+		border-bottom: 2px dotted #e3f2fd;
+		content: '';
+		bottom: 10px;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+	}
+	&__name {
+		background: #fff;
+		display: inline-block;
+		padding-right: 5px;
+		color: #455a64;
+		font-style: normal;
+		font-size: 16px;
+		font-weight: normal;
+	}
+	&__value {
+		float: right;
+		color: #455a64;
+		font-style: normal;
+		background: #fff;
+		display: inline-block;
+		padding-left: 5px;
+		font-size: 16px;
+		font-weight: normal;
+		&_blue {
+			color: @blue;
+		}
 	}
 }
 .features {
