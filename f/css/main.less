@@ -1490,7 +1490,8 @@ a:hover .icon-right-arrow2 {
 		}
 	}
 	&_list &__link {
-		height: 220px;
+		min-height: 220px;
+		height: auto;
 		padding: 0;
 	}
 	&__img {
@@ -1508,20 +1509,22 @@ a:hover .icon-right-arrow2 {
 		}
 	}
 	&_list &__img {
-		float: left;
+		position: absolute;
+		left: 0;
+		top: 0;
 		width: 180px;
 		min-height: 0;
 		padding: 20px;
 		height: 100%;
 		& img {
-			max-width: 100%;
+			max-width: 80%;
 		}
 	}
 	&_list &__info {
 		overflow: hidden;
 		display: block;
 		text-align: left;
-		padding: 20px 30px 20px 20px;
+		padding: 20px 180px 30px 200px;
 	}
 	&__brand {
 		color: #455a64;
@@ -1558,14 +1561,15 @@ a:hover .icon-right-arrow2 {
 		line-height: 20px;
 	}
 	&__price-wrap {
-		float: right;
+		position: absolute;
+		right: 0;
+		height: 100%;
 		display: block;
 		width: 150px;
-		vertical-align: top;
 		border-left: 2px solid #f1f8fe;
-		height: 100%;
 		padding: 20px;
-		text-align: center;
+		padding-left: 30px;
+		text-align: left;
 	}
 	&__old-price {
 		font-size: 16px;
@@ -1574,7 +1578,6 @@ a:hover .icon-right-arrow2 {
 		margin-right: 10px;
 		position: relative;
 		overflow: hidden;
-		text-align: center;
 		&:before {
 			content: '';
 			height: 1px;
@@ -1605,6 +1608,23 @@ a:hover .icon-right-arrow2 {
 		display: inline-block;
 		vertical-align: top;
 		top: 0;
+	}
+	&__description {
+		height: 30px;
+		margin-bottom: 10px;
+		&-item {
+			padding-left: 30px;
+			color: #546e7a;
+			font-size: 16px;
+		}
+		&-name {
+			width: 130px;
+			float: left;
+		}
+		&-price {
+			width: 150px;
+			float: right;
+		}
 	}
 }
 .info-line {
