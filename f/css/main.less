@@ -64,6 +64,16 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .input {
 	border: 2px solid #e3f2fd !important;
 	border-radius: 10px !important;
@@ -176,7 +186,7 @@ ul {
 	position: absolute;
 	right: 0;
 	top: 0;
-	z-index: 10;
+	z-index: 3;
 	height: 100%;
 	width: 45px;
 	background: @blue;
@@ -302,6 +312,19 @@ ul {
   display: block;
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
+}
+.icon-order {
+	width: 16px;
+	height: 12px;
+	margin: -3px 8px 0 0;
+	background-position: -28px -125px;
+}
+.iconize-close:before {
+	width: 12px;
+	height: 13px;
+	background-position: 0 -119px;
+	top: 0;
+	left: 0;
 }
 .iconize-tiles:before {
 	width: 18px;
@@ -1121,6 +1144,25 @@ a:hover .icon-right-arrow2 {
 		color: #fff;
 	}
 }
+.red-btn {
+	border-radius: 36px;
+	padding: 8px 20px 8px 20px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	background: @pink;
+	white-space: nowrap;
+	&:hover {
+		background: #f50057;
+		color: #fff;
+	}
+	&:focus {
+		color: #fff;
+	}
+	&:hover:focus {
+		color: #fff;
+	}
+}
 .catalog-menu {
 	border-radius: 10px;
 	position: relative;
@@ -1526,6 +1568,9 @@ a:hover .icon-right-arrow2 {
 		text-align: left;
 		padding: 20px 180px 30px 200px;
 	}
+	&_list&_cart &__info {
+		padding-right: 340px;
+	}
 	&__brand {
 		color: #455a64;
 		font-size: 12px;
@@ -1554,6 +1599,18 @@ a:hover .icon-right-arrow2 {
 		line-height: 40px;
 		color: @blue;
 		font-weight: bold;
+		margin-bottom: 5px;
+		&-mult {
+			font-size: 16px;
+			color: #546e7a;
+			font-style: normal;
+			& .rub {
+				font-weight: normal;
+			}
+			&-count {
+				font-weight: normal;
+			}
+		}
 	}
 	&_list &__price {
 		font-style: normal;
@@ -1563,11 +1620,12 @@ a:hover .icon-right-arrow2 {
 	&__price-wrap {
 		position: absolute;
 		right: 0;
+		top: 0;
 		height: 100%;
 		display: block;
 		width: 150px;
 		border-left: 2px solid #f1f8fe;
-		padding: 20px;
+		padding: 30px 20px;
 		padding-left: 30px;
 		text-align: left;
 	}
@@ -1625,6 +1683,96 @@ a:hover .icon-right-arrow2 {
 			width: 150px;
 			float: right;
 		}
+		&-amount {
+			width: 160px;
+			float: right;
+			text-align: center;
+			padding-left: 0;
+		}
+	}
+	&__amount {
+		position: absolute;
+		right: 160px;
+		top: 0;
+		height: 100%;
+		display: block;
+		width: 150px;
+		border-left: 2px solid #f1f8fe;
+		padding: 20px;
+		padding-left: 30px;
+		padding-top: 32px;
+		text-align: center;
+	}
+	&__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 12px;
+		z-index: 3;
+		height: 13px;
+		display: block;
+		&:hover:before {
+			background-position: -12px -119px;
+		}
+	}
+}
+.amounter {
+	position: relative;
+	border: 2px solid @blue;
+	border-radius: 20px;
+	height: 40px;
+	width: 100px;
+	display: inline-block;
+	vertical-align: top;
+	&__btn {
+		position: absolute;
+		left: -2px;
+		top: -2px;
+		height: 40px;
+		width: 35px;
+		border-radius: 20px 0 0 20px;
+		& button {
+			height: 100%;
+			width: 100%;
+			background: none;
+			border: none;
+		}
+		&_right {
+			border-radius: 0 20px 20px 0;
+			left: auto;
+			right: -2px;
+		}
+		&:hover {
+			background: @blue;
+		} 
+	}
+	&__numb {
+		display: inline-block;
+		vertical-align: middle;
+		height: auto !important;
+		padding: 5px 0 !important;
+		margin-bottom: 0 !important;
+		width: 20px;
+		border: none !important;
+		text-align: center;
+		box-shadow: none !important;
+		font-size: 16px !important;
+		font-weight: bold;
+		line-height: 25px!important;
+		color: #546e7a;
+	}
+	&__sym {
+		color: @blue;
+		font: bold 25px/30px 'Open Sans', sans-serif;
+		margin-top: -5px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&__btn_right &__sym {
+		margin-top: -2px;
+	}
+	&__btn:hover &__sym {
+		color: #fff;
 	}
 }
 .info-line {
@@ -1938,6 +2086,24 @@ a:hover .icon-right-arrow2 {
 		a&:hover,
 		&_active {
 			background: @blue;
+		}
+	}
+}
+.cart {
+	&__total {
+		padding-right: 50px;
+		float: right;
+		color: #455a64;
+		font-size: 16px;
+		&-num {
+			font-size: 40px;
+			color: @blue;
+			font-weight: bold;
+			margin-left: 10px;
+			& .rub {
+				font-weight: normal;
+				margin-left: 5px;
+			}
 		}
 	}
 }

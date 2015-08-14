@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1000">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="f/i//favicon.ico">
+    <title>NovoeDetstvo</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="f/js/jquery-1.11.3.min.js"></script>
+    <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <link rel="stylesheet" href="f/css/bootstrap.min.css">
+    <script src="f/js/jquery.menu-aim.js"></script>
+    <script src="f/js/bootstrap.min.js"></script>
+    <script src="f/js/bootstrap-multiselect.js"></script>
+    <script src="f/js/bootstrap-spinner.min.js"></script>
+    <link rel="stylesheet" href="f/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="f/css/main.css">
+    <script src="f/js/common.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
+    <script>
+
+      $(document).ready(function(){
+        var total = 0;
+        $(".amounter__numb").each(function(){
+          var price = $(this).closest(".catalog__link").find(".catalog__price-wrap");
+          price.find(".catalog__price-mult-count").text($(this).val());
+          price.find(".catalog__price").text(parseInt(price.find(".catalog__price-mult-count").text()) * parseInt(price.find(".catalog__price-num").text()));
+          total = total + parseInt(price.find(".catalog__price").text());
+        });
+        $(".cart__total-num b").text(total);
+      });
+      $(function(){
+        $(".amounter__numb").change(function(){
+          var total = 0;
+          $(".amounter__numb").each(function(){
+            var price = $(this).closest(".catalog__link").find(".catalog__price-wrap");
+            price.find(".catalog__price-mult-count").text($(this).val());
+            price.find(".catalog__price").text(parseInt(price.find(".catalog__price-mult-count").text()) * parseInt(price.find(".catalog__price-num").text()));
+            total = total + parseInt(price.find(".catalog__price").text());
+          });
+          $(".cart__total-num b").text(total);
+        });
+      })
+    </script>
+  </head>
+<body>
+  <div class="wrap clearfix">  
+    <header class="header">
+      <div class="holder holder_header">
+        <div class="header__menu-wrap">
+          <div class="whom-btns header__whom">
+            <p class="whom-btns__item whom-btns__item_parents whom-btns__item_active slide-btn"><i class="icon-parent-face"></i><span class="slide-btn__text">Родителям</span></p><a href="#" class="whom-btns__item  whom-btns__item_educators slide-btn"><i class="icon-educator-face"></i><span class="slide-btn__text">Педагогам</span></a>
+          </div>
+          <ul class="main-menu">
+            <li class="main-menu__item"><a href="#"><i class="icon-catalog"></i>Каталог</a>
+            </li><li class="main-menu__item main-menu__item_sub"><a href="#">О компании</a>
+            </li><li class="main-menu__item"><a href="#">Доставка и оплата</a></li>
+          </ul>
+        </div>
+         <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
+        <div class="header__controls">
+          <div class="header__btns">
+            <a href="#" class="cart-btn cart-btn_header slide-btn"><i class="cart-btn__icon icon-cart"></i><span class="slide-btn__text">Корзина</span><span class="cart-btn__num">14</span></a>
+            <a href="#" class="person-btn slide-btn"><i class="icon-face"></i><span class="slide-btn__text">Личный кабинет</span></a>
+          </div>
+          <div class="header__contacts">
+            <a href="#" class="header__contacts-link">Контакты</a>
+            <div class="phone">
+                <i class="icon-phone"></i>
+                <span class="phone__num">8 800 738-00-02</span>
+                <p class="phone__text">Бесплатный звонок по России</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="holder clearfix">
+        <div class="cart">
+          <h1 class="section-title">Корзина</h1>
+          <div class="catalog catalog_bot_50 catalog_list catalog_cart">
+            <div class="catalog__description">
+              <span class="catalog__description-name catalog__description-item">Товар</span>
+              <span class="catalog__description-price catalog__description-item">Цена</span>
+              <span class="catalog__description-amount catalog__description-item">Количество</span>
+            </div>
+            <div class="catalog__holder">
+              <div class="catalog__item">
+                <a href="#" class="catalog__link">
+                  <span class="catalog__close iconize-close"></span>
+                  <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
+                  <span class="catalog__info">
+                    <span class="catalog__name">Лабиринт «Мышка»</span>
+                    <span class="info-line">
+                      <b class="info-line__name">Артикул</b>
+                      <b class="info-line__value">10-321</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Бренд</b>
+                      <b class="info-line__value info-line__value_blue">YAKI</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Материал</b>
+                      <b class="info-line__value">Пластик, текстиль</b>
+                    </span>
+                  </span>
+                  <span class="catalog__amount">
+                    <span class="amounter">
+                      <span class="amounter__btn">
+                        <button type="button" data-value="-1" data-target="#spinner" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">-</span>
+                        </button>
+                      </span>
+                      <input type="number" data-ride="spinner" id="spinner" class="amounter__numb" value="1" data-min="1" onclick="return false;">
+                      <span class="amounter__btn amounter__btn_right">
+                        <button type="button" data-value="1" data-target="#spinner" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">+</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="catalog__price-wrap">
+                    <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    <span class="catalog__price-mult"><b class="catalog__price-mult-count">20</b> х <span class="catalog__price-num">320</span> <b class="rub">&#8399;</b></span>
+                  </span>
+                </a>
+              </div><div class="catalog__item">
+                <a href="#" class="catalog__link">
+                  <span class="catalog__close iconize-close"></span>
+                  <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
+                  <span class="catalog__info">
+                    <span class="catalog__name">Ботинки обучающие</span>
+                    <span class="info-line">
+                      <b class="info-line__name">Артикул</b>
+                      <b class="info-line__value">10-321</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Бренд</b>
+                      <b class="info-line__value info-line__value_blue">YAKI</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Материал</b>
+                      <b class="info-line__value">Пластик, текстиль</b>
+                    </span>
+                  </span>
+                  <span class="catalog__amount">
+                    <span class="amounter">
+                      <span class="amounter__btn">
+                        <button type="button" data-value="-1" data-target="#spinner2" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">-</span>
+                        </button>
+                      </span>
+                      <input type="number" data-ride="spinner" id="spinner2" class="amounter__numb" value="1" data-min="1" onclick="return false;">
+                      <span class="amounter__btn amounter__btn_right">
+                        <button type="button" data-value="1" data-target="#spinner2" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">+</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="catalog__price-wrap">
+                    <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    <span class="catalog__price-mult"><b class="catalog__price-mult-count">20</b> х <span class="catalog__price-num">1590</span> <b class="rub">&#8399;</b></span>
+                  </span>
+                </a>
+              </div><div class="catalog__item">
+                <a href="#" class="catalog__link">
+                  <span class="catalog__close iconize-close"></span>
+                  <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
+                  <span class="catalog__info">
+                    <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
+                    <span class="info-line">
+                      <b class="info-line__name">Артикул</b>
+                      <b class="info-line__value">10-321</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Бренд</b>
+                      <b class="info-line__value info-line__value_blue">YAKI</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Материал</b>
+                      <b class="info-line__value">Пластик, текстиль</b>
+                    </span>
+                  </span>
+                  <span class="catalog__amount">
+                    <span class="amounter">
+                      <span class="amounter__btn">
+                        <button type="button" data-value="-1" data-target="#spinner3" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">-</span>
+                        </button>
+                      </span>
+                      <input type="number" data-ride="spinner" id="spinner3" class="amounter__numb" value="1" data-min="1" onclick="return false;">
+                      <span class="amounter__btn amounter__btn_right">
+                        <button type="button" data-value="1" data-target="#spinner3" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">+</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="catalog__price-wrap">
+                    <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    <span class="catalog__price-mult"><b class="catalog__price-mult-count">20</b> х <span class="catalog__price-num">500</span> <b class="rub">&#8399;</b></span>
+                  </span>
+                </a>
+              </div><div class="catalog__item">
+                <a href="#" class="catalog__link">
+                  <span class="catalog__close iconize-close"></span>
+                  <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
+                  <span class="catalog__info">
+                    <span class="catalog__name">Лабиринт № 1</span>
+                    <span class="info-line">
+                      <b class="info-line__name">Артикул</b>
+                      <b class="info-line__value">10-321</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Бренд</b>
+                      <b class="info-line__value info-line__value_blue">YAKI</b>
+                    </span>
+                    <span class="info-line">
+                      <b class="info-line__name">Материал</b>
+                      <b class="info-line__value">Пластик, текстиль</b>
+                    </span>
+                  </span>
+                  <span class="catalog__amount">
+                    <span class="amounter">
+                      <span class="amounter__btn">
+                        <button type="button" data-value="-1" data-target="#spinner4" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">-</span>
+                        </button>
+                      </span>
+                      <input type="number" data-ride="spinner" id="spinner4" class="amounter__numb" value="1" data-min="1" onclick="return false;">
+                      <span class="amounter__btn amounter__btn_right">
+                        <button type="button" data-value="1" data-target="#spinner4" data-toggle="spinner" onclick="return false;">
+                          <span class="amounter__sym">+</span>
+                        </button>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="catalog__price-wrap">
+                    <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
+                    <span class="catalog__price-mult"><b class="catalog__price-mult-count">20</b> х <span class="catalog__price-num">600</span> <b class="rub">&#8399;</b></span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="red-btn cart__btn"><i class="icon-order"></i>Оформить заказ</a>
+          <span class="cart__total">Итого:<span class="cart__total-num"><b>18 990</b><span class="rub">&#8399;</span></span></span>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <footer class="footer">
+    <div class="holder footer__holder clearfix">
+      <div class="footer__wrap">
+        <div class="footer__row">
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#"><i class="icon-catalog"></i>Каталог</a></p>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">О компании</a></p>
+            <div class="social">
+              <p class="social__title">Мы в соцсетях</p>
+              <a href="#" class="social__btn social__btn_facebook">&nbsp;
+              </a><a href="#" class="social__btn social__btn_vk">&nbsp;
+              </a><a href="#" class="social__btn social__btn_odn">&nbsp;</a>
+            </div>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">Доставка <br>и оплата</a></p>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">Родителям</a></p>
+            <ul class="footer__menu">
+              <li><a href="#">Родителям в помощь</a></li>
+              <li><a href="#">Скидки и акции</a></li>
+              <li><a href="#">Новинки</a></li>
+            </ul>
+          </div>
+          <div class="footer__cell footer__cell_green">
+            <p class="footer__title"><a href="#">Педагогам</a></p>
+            <ul class="footer__menu">
+              <li><a href="#">Комплексное оснащение ДОУ</a></li>
+              <li><a href="#">Решения по ФГОС</a></li>
+              <li><a href="#">Видеоматериалы</a></li>
+              <li><a href="#">Учебная литература</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__move">
+        <a class="footer__title footer__title_ib" href="#">Контакты</a>
+        <a class="footer__title footer__title_ib footer__title_cart" href="#"><i class="icon-cart"></i>Корзина</a>
+        <a class="footer__title footer__title_ib" href="#">Личный <br> кабинет</a>
+      </div>
+      <div class="developer">
+        <a target="_blank" rel="external nofollow" href="http://inteo-s.ru">
+          <span>Создание сайта</span>
+          <i class="icon-inteo"></i>
+        </a>
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>
