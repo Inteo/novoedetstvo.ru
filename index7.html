@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1000">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="f/i//favicon.ico">
+    <title>NovoeDetstvo</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="f/js/jquery-1.11.3.min.js"></script>
+    <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <link rel="stylesheet" href="f/css/bootstrap.min.css">
+    <script src="f/js/jquery.menu-aim.js"></script>
+    <script src="f/js/bootstrap.min.js"></script>
+    <script src="f/js/bootstrap-multiselect.js"></script>
+    <script src="f/js/bootstrap-spinner.min.js"></script>
+    <link rel="stylesheet" href="f/css/bootstrap-multiselect.css">
+    <link rel="stylesheet" href="f/css/main.css">
+    <script src="f/js/common.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
+  </head>
+<body>
+  <div class="wrap clearfix">  
+    <header class="header">
+      <div class="holder holder_header">
+        <div class="header__menu-wrap">
+          <div class="whom-btns header__whom">
+            <p class="whom-btns__item whom-btns__item_parents whom-btns__item_active slide-btn"><i class="icon-parent-face"></i><span class="slide-btn__text">Родителям</span></p><a href="#" class="whom-btns__item  whom-btns__item_educators slide-btn"><i class="icon-educator-face"></i><span class="slide-btn__text">Педагогам</span></a>
+          </div>
+          <ul class="main-menu">
+            <li class="main-menu__item"><a href="#"><i class="icon-catalog"></i>Каталог</a>
+            </li><li class="main-menu__item main-menu__item_sub"><a href="#">О компании</a>
+            </li><li class="main-menu__item"><a href="#">Доставка и оплата</a></li>
+          </ul>
+        </div>
+         <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
+        <div class="header__controls">
+          <div class="header__btns">
+            <a href="#" class="cart-btn cart-btn_header slide-btn"><i class="cart-btn__icon icon-cart"></i><span class="slide-btn__text">Корзина</span><span class="cart-btn__num">14</span></a>
+            <a href="#" class="person-btn slide-btn"><i class="icon-face"></i><span class="slide-btn__text">Личный кабинет</span></a>
+          </div>
+          <div class="header__contacts">
+            <a href="#" class="header__contacts-link">Контакты</a>
+            <div class="phone">
+                <i class="icon-phone"></i>
+                <span class="phone__num">8 800 738-00-02</span>
+                <p class="phone__text">Бесплатный звонок по России</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="holder clearfix">
+        <div class="order">
+          <h1 class="order__main-title">Оформление заказа</h1>
+          <form class="order__holder">
+            <div class="order__whom">
+              <div class="whom-btns header__whom">
+                <p class="whom-btns__item whom-btns__item_parents whom-btns__item_active"><i class="icon-parent-face"></i><span>Для родителей</span></p><a href="#" class="whom-btns__item  whom-btns__item_educators"><span>Для педагогов</span><i class="icon-educator-face"></i></a>
+              </div>
+            </div>
+            <p class="order__title"><span><i class="icon-parents"></i>Контактные данные</span></p>
+            <div class="order__inputs">
+              <div class="order__input">
+                <input type="text" class="input" placeholder="Как Вас зовут">
+              </div><div class="order__input">
+                <input type="text" class="input" placeholder="Электронная почта">
+              </div><div class="order__input">
+                <input type="text" class="input" placeholder="Телефон">
+              </div>
+            </div>
+            <p class="order__title"><span><i class="icon-delivery"></i>Доставка</span></p>
+            <div class="order__checks">
+              <div class="order__check">
+                <input id="checks1" type="checkbox" name="checks1" hidden />
+                <label for="checks1">Самовывоз</label>
+              </div>
+              <p class="order__text">После подтверждения готовности заказа, Вы можете забрать его по адресу г. Ярославль, ул.Магистральная, д. 20, с 9:00 до 17:00 в будние дни. Лицу, получающему заказ, при себе необходимо иметь паспорт и доверенность на получение.</p>
+              <div class="order__check">
+                <input id="checks2" type="checkbox" name="checks2" hidden />
+                <label for="checks2">По Ярославлю</label>
+              </div>
+              <p class="order__text">Доставка по Ярославлю осуществляется в будние дни с 9:00 до 20:00. Время доставки оговаривается с курьером индивидуально по телефону.</p>
+              <div class="order__check">
+                <input id="checks3" type="checkbox" name="checks3" hidden />
+                <label for="checks3">По Ярославской области</label>
+              </div>
+              <p class="order__text">Составляет 2000 <span class="rub">&#8399;</span>  в пределах 100 км от Ярославля (сумма доставки включается в счет на оплату). В районы, отдаленные от Ярославля более чем на 100 км, доставка рассчитывается индивидуально.</p>
+              <div class="order__check">
+                <input id="checks4" type="checkbox" name="checks4" hidden />
+                <label for="checks4">Транспортными компаниями</label>
+              </div>
+              <p class="order__text">Доставка осуществляется транспортными компаниями Автотрейдинг, Байкал-Сервис, ЖелДорЭкспедиция. Стоимость доставки рассчитывается в зависимости от выбора транспортной компании.</p>
+            </div>
+            <p class="order__title order__title_payment"><span><i class="icon-payment"></i>Оплата</span></p>
+            <p class="order__hint">Минимальная единовременная сумма заказа через интернет-магазин составляет  1500 <span class="rub">&#8399;</span>.</p>
+            <div class="order__checks">
+              <div class="order__check order__check_maxbot">
+                <input id="checks5" type="checkbox" name="checks5" hidden />
+                <label for="checks5">Наличными при получении заказа</label>
+              </div>
+              <div class="order__check order__check_minbot">
+                <input id="checks6" type="checkbox" name="checks6" hidden />
+                <label for="checks6">Через платежные системы</label>
+              </div>
+              <p class="order__text order__text_minbot">Оплата через платежные системы: Qiwi, MasterCard, WebMoney, Yandex деньги и многие другие.</p>
+              <div class="order__check order__check_minbot">
+                <input id="checks7" type="checkbox" name="checks7" hidden />
+                <label for="checks7">Безналичная оплата</label>
+              </div>
+              <p class="order__text">Оплата квитанцией в банке на основании выставления счета при оформлении заказа.</p>
+            </div>
+            <p class="order__title"><span><i class="icon-comment"></i>Комментарии к заказу</span></p>
+            <textarea name="" class="input text-area order__comment" placeholder="Напишите свои пожелания к заказу, и мы обязательно их учтем."></textarea>
+            <div class="order__submit">
+              <button class="red-btn" value=""><i class="icon-mail"></i>Отправить заказ</button>
+            </div>
+            <div class="order__offer">
+              <div class="order__check">
+                <input id="checks8" type="checkbox" name="checks8" hidden />
+                <label for="checks8">Совершая заказ, Вы соглашаетесь с <a href="#">Договором-офертой</a></label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <footer class="footer">
+    <div class="holder footer__holder clearfix">
+      <div class="footer__wrap">
+        <div class="footer__row">
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#"><i class="icon-catalog"></i>Каталог</a></p>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">О компании</a></p>
+            <div class="social">
+              <p class="social__title">Мы в соцсетях</p>
+              <a href="#" class="social__btn social__btn_facebook">&nbsp;
+              </a><a href="#" class="social__btn social__btn_vk">&nbsp;
+              </a><a href="#" class="social__btn social__btn_odn">&nbsp;</a>
+            </div>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">Доставка <br>и оплата</a></p>
+          </div>
+          <div class="footer__cell">
+            <p class="footer__title"><a href="#">Родителям</a></p>
+            <ul class="footer__menu">
+              <li><a href="#">Родителям в помощь</a></li>
+              <li><a href="#">Скидки и акции</a></li>
+              <li><a href="#">Новинки</a></li>
+            </ul>
+          </div>
+          <div class="footer__cell footer__cell_green">
+            <p class="footer__title"><a href="#">Педагогам</a></p>
+            <ul class="footer__menu">
+              <li><a href="#">Комплексное оснащение ДОУ</a></li>
+              <li><a href="#">Решения по ФГОС</a></li>
+              <li><a href="#">Видеоматериалы</a></li>
+              <li><a href="#">Учебная литература</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__move">
+        <a class="footer__title footer__title_ib" href="#">Контакты</a>
+        <a class="footer__title footer__title_ib footer__title_cart" href="#"><i class="icon-cart"></i>Корзина</a>
+        <a class="footer__title footer__title_ib" href="#">Личный <br> кабинет</a>
+      </div>
+      <div class="developer">
+        <a target="_blank" rel="external nofollow" href="http://inteo-s.ru">
+          <span>Создание сайта</span>
+          <i class="icon-inteo"></i>
+        </a>
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>
