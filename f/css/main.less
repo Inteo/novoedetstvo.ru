@@ -377,6 +377,12 @@ input[type='radio']:checked + label::after {
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
 }
+.icon-square {
+	width: 17px;
+	height: 17px;
+	margin: -4px 15px 0 0;
+	background-position: -183px -93px;
+}
 .icon-mail {
 	width: 20px;
 	height: 16px;
@@ -1274,7 +1280,7 @@ a:hover .icon-right-arrow3 {
 }
 .red-btn {
 	border-radius: 36px;
-	padding: 8px 20px 8px 20px;
+	padding: 8px 20px;
 	color: #fff;
 	border: none;
 	font-size: 16px;
@@ -1293,12 +1299,34 @@ a:hover .icon-right-arrow3 {
 		color: #fff;
 	}
 }
+.green-btn {
+	border: 2px solid @green;
+	border-radius: 36px;
+	padding: 8px 20px;
+	color: @green;
+	font-size: 16px;
+	font-weight: bold;
+	white-space: nowrap;
+	&:hover {
+		background: @green;
+		color: #fff;
+	}
+	&:focus {
+		color: @green;
+	}
+	&:hover:focus {
+		color: #fff;
+	}
+}
 .catalog-menu {
 	border-radius: 10px;
 	position: relative;
 	background: #fff;
 	width: 220px;
 	z-index: 10;
+	&_green {
+		margin-bottom: 30px;
+	}
 	&__title {
 		border-radius: 10px 10px 0 0;
 		background: @blue;
@@ -1306,6 +1334,9 @@ a:hover .icon-right-arrow3 {
 		color: #fff;
 		font-size: 20px;
 		font-weight: bold;
+	}
+	&_green &__title {
+		background: @green;
 	}
 	&__list {
 		list-style: none;
@@ -1329,8 +1360,14 @@ a:hover .icon-right-arrow3 {
 		}
 	}
 	&__link {
-		padding: 14px 25px 14px 15px;
+		padding: 14px 35px 14px 15px;
 		display: block;
+	}
+	&_green &__link {
+		color: @green;
+		&:hover {
+			color: @pink;
+		}
 	}
 	&__item_sub:hover &__link {
 		color: @pink;
@@ -1408,6 +1445,12 @@ a:hover .icon-right-arrow3 {
 			&:hover {
 				color: @pink;
 			}
+		}
+	}
+	&_green a {
+		color: @green;
+		&:hover {
+			color: @pink;
 		}
 	}
 }
@@ -2165,6 +2208,12 @@ a:hover .icon-right-arrow3 {
 			margin-right: 5px;
 		}
 	}
+	&_green {
+		margin-bottom: 5px;
+	}
+	&_green li a {
+		color: @green;
+	}
 }
 .section-title {
 	padding-bottom: 35px;
@@ -2512,6 +2561,106 @@ a:hover .icon-right-arrow3 {
 		&:hover:after {
 			border-left-color: @pink;
 		}
+	}
+}
+.type-decisions {
+	background: #fff;
+	border-radius: 20px;
+	&__holder {
+		padding: 35px;
+	}
+	&__title {
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 40px;
+		color: #546e7a;
+		margin-bottom: 10px;
+	}
+}
+.type-decisions-order {
+	background: #26a69a;
+	position: relative;
+	display: table;
+	width: 100%;
+	&__row {
+		display: table-row;
+		width: 100%;
+	}
+	&__cell {
+		display: table-cell;
+		vertical-align: top;
+	}
+	&__img {
+		position: relative;
+		height: 500px;
+		background: rgba(0, 0, 0, 0) url("../../f/i/patterns/2.jpg") repeat scroll right top;
+		border-bottom: 50px solid #009688;
+		& img {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -393px;
+			max-width: 9999px;
+		}
+		&:before {
+			background: rgba(0, 0, 0, 0) url("../../f/i/waves/wave4.png") repeat-x scroll right top;
+		  bottom: -57px;
+		  content: "";
+		  display: block;
+		  height: 7px;
+		  position: absolute;
+		  left: 0;
+		  width: 100%;
+		  z-index: 3;
+		}
+		&-wrap {
+			position: relative;
+			overflow: hidden;
+			height: 100%;
+		}
+	}
+	&__info {
+		width: 340px;
+		vertical-align: middle;
+		padding: 25px 35px;
+		&:after {
+			background: rgba(0, 0, 0, 0) url("../../f/i/waves/wave3.png") repeat-x scroll left top;
+	    bottom: -7px;
+	    content: "";
+	    display: block;
+	    height: 7px;
+	    right: 0;
+	    position: absolute;
+	    width: 340px;
+	    z-index: 3;
+		}
+		&-holder {
+			background: #fff;
+			border-radius: 20px;
+			padding: 35px;
+			text-align: center;
+		}
+	}
+	&__price {
+		color: @green;
+		font-size: 40px;
+		font-weight: bold;
+		margin-bottom: 25px;
+		& span {
+			font-size: 16px;
+		}
+		& .rub {
+			font-weight: normal;
+			font-size: 30px;
+			padding-left: 5px;
+		}
+	}
+	&__btn {
+		margin-bottom: 25px;
+	}
+	&__text {
+		color: #455a64;
+		margin-bottom: 35px;
 	}
 }
 .footer {  
