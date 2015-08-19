@@ -21,6 +21,15 @@
     <script src="f/js/common.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
+    <script>
+      $(function(){
+        $(".type-decisions-catalog__more").click(function(){
+          $(this).closest(".type-decisions-catalog").find(".type-decisions-catalog__wrap").addClass("type-decisions-catalog__wrap_open");
+          $(this).hide();
+          return false;
+        })
+      });
+    </script>
   </head>
 <body>
   <div class="wrap clearfix">  
@@ -296,6 +305,173 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="type-decisions__holder">
+                  <p class="type-decisions__subtitle">Описание</p>
+                  <p class="type-decisions__text">Наша основная специализация - это комплектация детских дошкольных учреждений ( детских садов, ДОУ, развивающих центров, частных детских садов) игрушками, мебелью, спортинвентарем, оборудованием, литературой, театральным инвентарем. Весь предлагаемый ассортимент должен быть сертифицирован, тщательно отобран и соответствовать всем <a href="#">требованиям СанПин</a>. Данный раздел нашего каталога содержит предложения именно комплексного оснащения детских садов или отдельных групп.</p>
+                  <p class="type-decisions__subtitle type-decisions__subtitle_bigbot">Оборудование</p>
+                  <ul class="switch">
+                    <li class="switch__item switch__item_active"><p>Ясельная группа</p>
+                    </li><li class="switch__item"><a href="#">1-ая младшая группа</a>
+                    </li><li class="switch__item"><a href="#">2-ая младшая группа</a>
+                    </li><li class="switch__item"><a href="#">Средняя группа</a>
+                    </li><li class="switch__item"><a href="#">Старшая группа</a>
+                    </li><li class="switch__item"><a href="#">Подготовительная группа</a></li>
+                  </ul>
+                  <div class="type-decisions-catalog">
+                    <div class="type-decisions-catalog__wrap">
+                      <div class="type-decisions-catalog__holder">
+                        <div class="type-decisions-catalog__table">
+                          <div class="type-decisions-catalog__row type-decisions-catalog__row_title">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">Артикул</div>
+                            <div class="type-decisions-catalog__cell">Товар</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">Количество</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">Итого</div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">10-323</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/1.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышка»</a></p>
+                                <p>Бренд: <span>K’S Kids</span></p>
+                                <p>Материал: текстиль, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">6 400<span class="rub">&#8399;</span></p>
+                              20 х 320
+                            </div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">18-300</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/2.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышки в сыре»</a></p>
+                                <p>Бренд: <span>МДИ</span></p>
+                                <p>Материал: дерево, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">10 000<span class="rub">&#8399;</span></p>
+                              20 х 500
+                            </div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">10-323</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/1.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышка»</a></p>
+                                <p>Бренд: <span>K’S Kids</span></p>
+                                <p>Материал: текстиль, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">6 400<span class="rub">&#8399;</span></p>
+                              20 х 320
+                            </div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">18-300</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/2.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышки в сыре»</a></p>
+                                <p>Бренд: <span>МДИ</span></p>
+                                <p>Материал: дерево, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">10 000<span class="rub">&#8399;</span></p>
+                              20 х 500
+                            </div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">10-323</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/1.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышка»</a></p>
+                                <p>Бренд: <span>K’S Kids</span></p>
+                                <p>Материал: текстиль, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">6 400<span class="rub">&#8399;</span></p>
+                              20 х 320
+                            </div>
+                          </div>
+                          <div class="type-decisions-catalog__row">
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_article">18-300</div>
+                            <div class="type-decisions-catalog__cell">
+                              <div class="type-decisions-catalog__img">
+                                <img src="f/i/catalog/2.jpg" alt="">
+                              </div>
+                              <div class="type-decisions-catalog__info">
+                                <p><a href="#">Лабиринт «Мышки в сыре»</a></p>
+                                <p>Бренд: <span>МДИ</span></p>
+                                <p>Материал: дерево, пластик</p>
+                              </div>
+                            </div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_amount">20</div>
+                            <div class="type-decisions-catalog__cell type-decisions-catalog__cell_price">
+                              <p class="type-decisions-catalog__cell_price-main">10 000<span class="rub">&#8399;</span></p>
+                              20 х 500
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <a href="#" class="green-btn type-decisions-catalog__more">Показать все<i class="icon-big-down"></i></a>
+                    <a href="#" class="ico-link"><i class="icon-catalog2"></i>Скачать каталог <span>(,pdf, 15Мб)</span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="features features_green">
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/5.png" alt="">
+                  </div>
+                  <p class="features__title">Составление подробного ТЗ</p>
+                  <p class="features__text">при оформлении готового решения</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/6.png" alt="">
+                  </div>
+                  <p class="features__title">Эксклюзивный ассортимент товаров</p>
+                  <p class="features__text">широкий выбор уникальной продукции</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/7.png" alt="">
+                  </div>
+                  <p class="features__title">Комплексные варианты решения</p>
+                  <p class="features__text">оснащение в соответствии с ФГОС</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/8.png" alt="">
+                  </div>
+                  <p class="features__title">Новейшие направления</p>
+                  <p class="features__text">самые актуальные новинки в сфере образования</p>
                 </div>
               </div>
             </div>
