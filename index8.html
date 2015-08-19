@@ -24,15 +24,23 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
     <script>
       $(document).ready(function(){
-        $(".catalog-slider__holder").carouFredSel({
+        $(".detail-slider__holder").carouFredSel({
           responsive: true,
-          pagination: '.catalog-slider__pager',
           scroll: {
             duration: 450,
             timeoutDuration: 5000,
             fx: 'crossfade'
           },
+          next: ".detail-slider__right",
+          prev: ".detail-slider__left"
         });
+      });
+      $(function(){
+      	$(".detail__more").click(function(){
+      		$(this).closest(".detail__description").find(".detail__text").addClass("detail__text_open");
+      		$(this).hide();
+      		return false;
+      	})
       });
     </script>
   </head>
@@ -50,7 +58,7 @@
             </li><li class="main-menu__item"><a href="#">Доставка и оплата</a></li>
           </ul>
         </div>
-         <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
+        <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
         <div class="header__controls">
           <div class="header__btns">
             <a href="#" class="cart-btn cart-btn_header slide-btn"><i class="cart-btn__icon icon-cart"></i><span class="slide-btn__text">Корзина</span><span class="cart-btn__num">14</span></a>
@@ -180,6 +188,36 @@
                 <li><a href="#">Авторские методики раннего развития</a></li>
               </ul>
               <h1 class="section-title">Методика Марии Монтессори</h1>
+              <div class="detail">
+              	<div class="detail-slider">
+            			<div class="detail-slider__holder">
+            				<div class="detail-slider__item">
+            					<img src="f/i/slider-temp.jpg" alt="">
+            				</div>
+            				<div class="detail-slider__item">
+            					<img src="f/i/slider-temp.jpg" alt="">
+            				</div>
+            			</div>
+									<div class="detail-slider__left"></div>
+									<div class="detail-slider__right"></div>
+              	</div>
+              	<div class="detail__holder">
+              		<div class="detail__description">
+	              		<p class="detail__title">О методе</p>
+	              		<div class="detail__text">
+	              			<p>Смысл метода, разработанного итальянским педагогом, заключается в том, чтобы стимулировать в ребенке самобытность, самостоятельность, самовоспитание, саморазвитие и самообучение – т.е. те вещи, которые в ребенке заложены природой. А поскольку все эти способности проявляются уже в раннем детстве, то именно этот период и считается благодатной почвой для воспитания талантов и способностей.</p><p>Комнаты для обучения, созданные по методике Монтессори, разделены на зоны: практическая, учебная, сенсорная и двигательная. В первой малыши учатся самостоятельно обуваться, одеваться, пересыпать крупы, чистить тряпкой грязь. Во второй малыши развивают мышление и логику с помощью различных материй – географии, математики, естественно-научных предметов. В третьей, сенсорной зоне, дети изучают меры, формы, размеры и свойства предметов. А в четвертой малыши развивают ловкость, внимание и концентрацию.</p>
+	              		</div>
+	              		<a href="#" class="detail__more">Читать дальше<i class="icon-right-arrow3"></i></a>
+	              	</div>
+	              	<div class="detail__controls">
+	              		<div class="detail__controls-btns">
+	              			<a href="#" class="detail__controls-btn red-btn"><i class="icon-mail"></i>Подобрать оборудование</a>
+              				<a href="#" class="blue-btn blue-btn_small"><i class="icon-educator-face2"></i>Консультация</a>
+	              		</div>
+              			<p class="detail__controls-text"><i class="icon-star2"></i>Наши специалисты готовы подобрать необходимое оборудование исходя из ваших пожеланий и в условиях определенного вами бюджета</p>
+              		</div>
+              	</div>
+              </div>
               <div class="catalog catalog_2line">
                 <div class="catalog__holder">
                   <div class="catalog__item">
@@ -280,33 +318,35 @@
           </div>
         </div>
       </div>
-      <div class="features">
-        <div class="features__item">
-          <div class="features__img">
-            <img src="f/i/features/1.png" alt="">
-          </div>
-          <p class="features__title">Гарантия обмена</p>
-          <p class="features__text">замена товара надлежащего качества</p>
-        </div>
-        <div class="features__item">
-          <div class="features__img">
-            <img src="f/i/features/2.png" alt="">
-          </div>
-          <p class="features__title">Безопасность личных данных</p>
-        </div>
-        <div class="features__item">
-          <div class="features__img">
-            <img src="f/i/features/3.png" alt="">
-          </div>
-          <p class="features__title">Система бонусов</p>
-          <p class="features__text">индивидуальные программы лояльности клиентов</p>
-        </div>
-        <div class="features__item">
-          <div class="features__img">
-            <img src="f/i/features/4.png" alt="">
-          </div>
-          <p class="features__title">Лучшая цена</p>
-          <p class="features__text">накопительные скидки, выгодные акции</p>
+      <div class="features features_white">
+      	<div class="holder features__holder">
+	        <div class="features__item">
+	          <div class="features__img">
+	            <img src="f/i/features/1.png" alt="">
+	          </div>
+	          <p class="features__title">Гарантия обмена</p>
+	          <p class="features__text">замена товара надлежащего качества</p>
+	        </div>
+	        <div class="features__item">
+	          <div class="features__img">
+	            <img src="f/i/features/2.png" alt="">
+	          </div>
+	          <p class="features__title">Безопасность личных данных</p>
+	        </div>
+	        <div class="features__item">
+	          <div class="features__img">
+	            <img src="f/i/features/3.png" alt="">
+	          </div>
+	          <p class="features__title">Система бонусов</p>
+	          <p class="features__text">индивидуальные программы лояльности клиентов</p>
+	        </div>
+	        <div class="features__item">
+	          <div class="features__img">
+	            <img src="f/i/features/4.png" alt="">
+	          </div>
+	          <p class="features__title">Лучшая цена</p>
+	          <p class="features__text">накопительные скидки, выгодные акции</p>
+	        </div>
         </div>
       </div>
     </div>
