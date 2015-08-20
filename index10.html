@@ -16,73 +16,16 @@
     <script src="f/js/jquery-1.11.3.min.js"></script>
     <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <link rel="stylesheet" href="f/css/bootstrap.min.css">
-    <script src="f/js/jquery.menu-aim.js"></script>
     <script src="f/js/bootstrap.min.js"></script>
-    <script src="f/js/bootstrap-multiselect.js"></script>
-    <link rel="stylesheet" href="f/css/bootstrap-multiselect.css">
+    <script src="f/js/jquery.menu-aim.js"></script>
     <link rel="stylesheet" href="f/css/main.css">
     <script src="f/js/common.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
-    <script type="text/javascript">
-        $(document).ready(function() {
-          var old_count = 0;
-          $('#for').multiselect({
-            onChange: function(option, checked, select) {
-              if (!$(option).val()=='') {
-                $(option).closest(".select-form").addClass("active");
-              }
-            }
-          });
-          $('#age').multiselect({
-            onChange: function(option, checked, select) {
-              if (!$(option).val()=='') {
-                $(option).closest(".select-form").addClass("active");
-              }
-            }
-          });
-          $('#brand').multiselect({
-            nonSelectedText: 'Бренд',
-            onChange: function(option, checked, select) {
-              if (!$(option).val()=='') {
-                $(option).closest(".select-form").addClass("active");
-              }
-              var count = 0;
-              $(option).closest(".select-form").find("li.active").each(function(){
-                count = count + 1;
-              });
-              if(count == 0) 
-              {
-                $(option).closest(".select-form").removeClass("active");
-                $(option).closest(".select-form").find(".dropdown-menu li.dropdown-menu__accept").remove();
-              }
-              else if(count == 1 && old_count < count) {
-                $(option).closest(".select-form").find(".dropdown-menu").append("<li class='dropdown-menu__accept'><button>Применить</button></li>");
-              }
-              old_count = count;
-            }
-          });
-          $('#price').multiselect({
-            onChange: function(option, checked, select) {
-              if (!$(option).val()=='') {
-                $(option).closest(".select-form").addClass("active");
-              }
-            }
-          });
-          $('.reset-form').on('reset', function() {
-            $(this).find("option:selected").each(function() {
-              $(this).prop('selected', false);
-            });
-            $(this).find("select").multiselect('refresh');
-            $(this).removeClass("active");
-            $(this).find(".dropdown-menu li.dropdown-menu__accept").remove();
-            old_count = 0;
-          });
-          $('.select-form').find("option:selected").each(function() {
-            $(this).prop('selected', false);
-          });
-          $('.select-form').find("select").multiselect('refresh');
-        });
+    <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
     </script>
   </head>
 <body>
@@ -99,7 +42,7 @@
             </li><li class="main-menu__item"><a href="#">Доставка и оплата</a></li>
           </ul>
         </div>
-         <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
+        <a href="/" class="main-logo"><img src="f/i/Logo.png" alt="" class="main-logo__img"></a>
         <div class="header__controls">
           <div class="header__btns">
             <a href="#" class="cart-btn cart-btn_header slide-btn"><i class="cart-btn__icon icon-cart"></i><span class="slide-btn__text">Корзина</span><span class="cart-btn__num">14</span></a>
@@ -223,124 +166,61 @@
                   <span class="clear-text"></span>
                 </div>
               </form>
-              <ul class="breadcrumbs">
-                <li><a href="#">Главная</a><i class="icon-bread"></i></li>
-                <li><a href="#">Каталог</a></li>
-              </ul>
-              <h1 class="section-title">Предметно-развивающая среда</h1>
-              <div class="filter">
-                <div class="filter__row">
-                  <div class="filter__cell filter__cell_title">
-                    <span class="filter__title">Фильтр:</span>
-                  </div>
-                  <div class="filter__cell">
-                    <div class="filter__holder">
-                      <form class="btn-group reset-form select-form">
-                        <div class="btn-group">
-                          <select id="for">
-                            <option value="0">Для кого</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                            <option value="4">Option 4</option>
-                            <option value="5">Option 5</option>
-                            <option value="6">Option 6</option>
-                          </select>
-                          <button type="reset" class="btn-reset"></button>
-                        </div>
-                      </form>
-                      <form class="btn-group reset-form select-form">
-                        <div class="btn-group">
-                          <select id="age">
-                            <option value="0">Возраст</option>
-                            <option value="1">1-3 года</option>
-                            <option value="2">3-6 лет</option>
-                            <option value="3">6-14 лет</option>
-                            <option value="4">Старше 14 лет</option>
-                          </select>
-                          <button type="reset" class="btn-reset"></button>
-                        </div>
-                      </form>
-                      <form class="btn-group reset-form select-form select-form_multi">
-                        <div class="btn-group">
-                          <select id="brand" multiple="multiple">
-                            <option value="0">Бренд</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                            <option value="4">Option 4</option>
-                            <option value="5">Option 5</option>
-                            <option value="6">Option 6</option>
-                          </select>
-                          <button type="reset" class="btn-reset"></button>
-                        </div>
-                      </form>
-                      <form class="btn-group reset-form select-form">
-                        <div class="btn-group">
-                          <select id="price">
-                            <option value="0">Цена</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                            <option value="4">Option 4</option>
-                            <option value="5">Option 5</option>
-                            <option value="6">Option 6</option>
-                          </select>
-                          <button type="reset" class="btn-reset"></button>
-                        </div>
-                      </form>
+              <div class="goods">
+                <ul class="breadcrumbs">
+                  <li><a href="#">Главная</a><i class="icon-bread"></i></li>
+                  <li><a href="#">Каталог</a><i class="icon-bread"></i></li>
+                  <li><a href="#">Малые формы</a></li>
+                </ul>
+                <div class="goods__main">
+                  <div class="goods__img">
+                    <div class="goods-carou">
+                      <div class="goods-carou__holder">
+                        <img src="f/i/goods/1.jpg" alt="">
+                      </div>
+                      <div class="goods-carou__pager">
+                        <a href="#" class="selected"><img src="f/i/goods/1.jpg" alt="">
+                        </a><a href="#"><img src="f/i/goods/2.jpg" alt=""></a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="view-switcher filter__cell">
-                    <span class="view-switcher__item view-switcher__item_active view-switcher__item_tiles iconize-tiles">
-                    </span><a href="/index5.html" class="view-switcher__item view-switcher__item_list iconize-list"></a>
+                  </div><div class="goods__info">
+                    <p class="goods__article">Артикул 502756</p>
+                    <h1 class="goods__name">Щенок «Дружок»</h1>
+                    <a href="#" class="goods__fgos" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="left" data-trigger="focus"><i class="icon-fgos"></i></a>
                   </div>
                 </div>
               </div>
-              <div class="catalog catalog_bot_50">
-                <p class="catalog__title"><span>Игровая деятельность</span><b>320</b></p>
-                <div class="catalog__holder">
-                  <div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Ботинки обучающие</span>
-                      <span class="catalog__price">1 590 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
-                      <span class="catalog__price">500 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт № 1</span>
-                      <span class="catalog__price">600 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
+              <div class="features">
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/1.png" alt="">
                   </div>
+                  <p class="features__title">Гарантия обмена</p>
+                  <p class="features__text">замена товара надлежащего качества</p>
                 </div>
-                <a href="#" class="blue-btn">Смотреть все<i class="icon-right-arrow2"></i></a>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/2.png" alt="">
+                  </div>
+                  <p class="features__title">Безопасность личных данных</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/3.png" alt="">
+                  </div>
+                  <p class="features__title">Система бонусов</p>
+                  <p class="features__text">индивидуальные программы лояльности клиентов</p>
+                </div>
+                <div class="features__item">
+                  <div class="features__img">
+                    <img src="f/i/features/4.png" alt="">
+                  </div>
+                  <p class="features__title">Лучшая цена</p>
+                  <p class="features__text">накопительные скидки, выгодные акции</p>
+                </div>
               </div>
-              <div class="catalog catalog_bot_50">
-                <p class="catalog__title"><span>Наборы для детского творчества</span><b>150</b></p>
+              <div class="catalog">
+                <p class="catalog__title"><a href="#"><i class="icon-eye"></i>Вы смотрели</a></p>
                 <div class="catalog__holder">
                   <div class="catalog__item">
                     <a href="#" class="catalog__link">
@@ -384,10 +264,9 @@
                     </a>
                   </div>
                 </div>
-                <a href="#" class="blue-btn">Смотреть все<i class="icon-right-arrow2"></i></a>
               </div>
-              <div class="catalog catalog_bot_50">
-                <p class="catalog__title"><span>Конструкторы</span><b>167</b></p>
+              <div class="catalog">
+                <p class="catalog__title"><a href="#"><i class="icon-star"></i>Рекомендуем</a></p>
                 <div class="catalog__holder">
                   <div class="catalog__item">
                     <a href="#" class="catalog__link">
@@ -426,61 +305,8 @@
                     </a>
                   </div>
                 </div>
-                <a href="#" class="blue-btn">Смотреть все<i class="icon-right-arrow2"></i></a>
-              </div>
-              <div class="catalog-btns">
-                <div class="catalog-btns__item catalog-btns__item_pay">
-                  <a href="#" class="catalog-btns__link">
-                    <span class="catalog-btns__info">
-                      <b class="catalog-btns__title">Доставка и оплата</b>
-                      <b class="catalog-btns__text">Мы осуществляем доставку товара в течении 7-10 дней после подтверждения заказа</b>
-                    </span><span class="catalog-btns__img">
-                      <img src="f/i/catalog-btns/1.png" alt="">
-                    </span>
-                  </a>
-                </div><div class="catalog-btns__item catalog-btns__item_educators">
-                  <a href="#" class="catalog-btns__link">
-                    <span class="catalog-btns__info">
-                      <b class="catalog-btns__title">Педагогам</b>
-                      <b class="catalog-btns__text">Комплексные решения по оснащению ДОУ, решения по ФГОС, а так же учебная литература, статьи и программы</b>
-                    </span><span class="catalog-btns__img">
-                      <img src="f/i/catalog-btns/2.png" alt="">
-                    </span>
-                  </a>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="features features_white">
-        <div class="holder features__holder">
-          <div class="features__item">
-            <div class="features__img">
-              <img src="f/i/features/1.png" alt="">
-            </div>
-            <p class="features__title">Гарантия обмена</p>
-            <p class="features__text">замена товара надлежащего качества</p>
-          </div>
-          <div class="features__item">
-            <div class="features__img">
-              <img src="f/i/features/2.png" alt="">
-            </div>
-            <p class="features__title">Безопасность личных данных</p>
-          </div>
-          <div class="features__item">
-            <div class="features__img">
-              <img src="f/i/features/3.png" alt="">
-            </div>
-            <p class="features__title">Система бонусов</p>
-            <p class="features__text">индивидуальные программы лояльности клиентов</p>
-          </div>
-          <div class="features__item">
-            <div class="features__img">
-              <img src="f/i/features/4.png" alt="">
-            </div>
-            <p class="features__title">Лучшая цена</p>
-            <p class="features__text">накопительные скидки, выгодные акции</p>
           </div>
         </div>
       </div>

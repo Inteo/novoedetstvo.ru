@@ -355,7 +355,9 @@ input[type='radio']:checked + label::after {
   color: #546e7a !important;
   font: 16px/20px 'Open Sans', sans-serif !important;
 }
+.popover.left {
 
+}
 [class^="icon-"], [class*=" icon-"] {
   display: inline-block;
   width: 14px;
@@ -376,6 +378,17 @@ input[type='radio']:checked + label::after {
   display: block;
   content: '';
   background: url('../../f/i/icons.png') -9999px -9999px no-repeat;
+}
+.icon-fgos {
+	width: 40px;
+	height: 50px;
+	background-position: -109px -154px;
+}
+.icon-eye {
+	width: 29px;
+	height: 17px;
+	margin: -4px 12px 0 0;
+	background-position: -181px -117px;
 }
 .icon-big-down {
 	margin: -2px 0 0 15px;
@@ -556,6 +569,15 @@ a:hover .icon-catalog {
 a:hover .icon-catalog2 {
 	background-position: -154px -119px;
 }
+.icon-catalog3 {
+	width: 22px;
+	height: 26px;
+	margin: -3px 10px 0 0;
+	background-position: -154px -145px;
+}
+a:hover .icon-catalog3 {
+	background-position: -154px -119px;
+}
 .icon-big-catalog {
 	width: 15px;
 	height: 15px;
@@ -651,6 +673,9 @@ a:hover .icon-right-arrow3 {
 		& span {
 			color: @pink;
 		}
+	}
+	&_blue {
+		color: @blue;
 	}
 }
 .wrap {  
@@ -944,6 +969,10 @@ a:hover .icon-right-arrow3 {
 		&_parents&_active {
 			background: @blue;
 			color: #fff;
+			&:hover {
+				border: 2px solid @blue;
+				color: #fff;
+			}
 		}
 		&_educators {
 			padding-left: 22px;
@@ -962,6 +991,10 @@ a:hover .icon-right-arrow3 {
 		&_educators&_active {
 			background: @green;
 			color: #fff;
+			&:hover {
+				color: #fff;
+				border: 2px solid @green;
+			}
 		}
 	}
 }
@@ -1254,18 +1287,18 @@ a:hover .icon-right-arrow3 {
 			}
 		}
 		&_left {
-			border-radius: 36px 0 0 36px;
-			padding: 8px 30px 8px 30px;
+			border-radius: 36px 0 0 36px !important;
+			padding: 8px 30px 8px 30px !important;
 			@media @small {
-				border-radius: 36px;
+				border-radius: 36px !important;
 			}
 		}
 		&_right {
-			border-radius: 0 36px 36px 0;
-			padding: 8px 30px 8px 30px;
+			border-radius: 0 36px 36px 0 !important;
+			padding: 8px 30px 8px 30px !important;
 			margin-left: -2px;
 			@media @small {
-				border-radius: 36px;
+				border-radius: 36px !important;
 				margin-left: 0;
 			}
 		}
@@ -1935,6 +1968,9 @@ a:hover .icon-right-arrow3 {
 	width: 100px;
 	display: inline-block;
 	vertical-align: top;
+	&:hover {
+		border: 2px solid @pink;
+	}
 	&__btn {
 		position: absolute;
 		left: -2px;
@@ -1953,9 +1989,6 @@ a:hover .icon-right-arrow3 {
 			left: auto;
 			right: -2px;
 		}
-		&:hover {
-			background: @blue;
-		} 
 	}
 	&__numb {
 		display: inline-block;
@@ -1983,7 +2016,7 @@ a:hover .icon-right-arrow3 {
 		margin-top: -2px;
 	}
 	&__btn:hover &__sym {
-		color: #fff;
+		color: @pink;
 	}
 }
 .info-line {
@@ -2346,6 +2379,9 @@ a:hover .icon-right-arrow3 {
 				margin-left: 5px;
 			}
 		}
+	}
+	&__btn {
+		margin-right: 30px;
 	}
 }
 .order {
@@ -2909,6 +2945,93 @@ a:hover .icon-right-arrow3 {
 	&__more {
 		margin-right: 35px;
 		padding: 8px 20px 8px 25px;
+	}
+}
+.goods {
+	background: #fff;
+	border-radius: 20px;
+	padding: 30px;
+	margin-bottom: 30px;
+	&__main {
+		position: relative;
+		padding-bottom: 50px;
+		&:after {
+	    background: rgba(0, 0, 0, 0) url("../../f/i/waves/11.png") repeat-x scroll 0 0;
+	    bottom: 0;
+	    content: "";
+	    display: block;
+	    height: 9px;
+	    left: 0;
+	    position: absolute;
+	    width: 100%;
+	  }
+	}
+	&__img {
+		display: inline-block;
+		vertical-align: top;
+		width: 45%;
+		padding-right: 30px;
+	}
+	&__info {
+		display: inline-block;
+		vertical-align: top;
+		width: 55%;
+	}
+	&__article {
+		font-style: italic;
+		color: #90a4ae;
+	}
+	&__name {
+		color: #546e7a;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 35px;
+		padding-right: 60px;
+	}
+	&__fgos {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+.goods-carou {
+	&__holder {
+		max-width: 300px;
+  	margin: 0 auto;
+  	margin-bottom: 50px;
+  	position: relative;
+  	padding-top: 30px;
+		& img {
+			width: 100%;
+		}
+	}
+	&__pager {
+		margin-left: -15px;
+		& a {
+			display: inline-block;
+			width: 60px;
+			margin-left: 15px;
+			position: relative;
+			height: 60px;
+			vertical-align: top;
+			border-radius: 10px;
+			border: 2px solid transparent;
+			&:hover {
+				border: 2px solid #e3f2fd;
+			}
+			&.selected {
+				border: 2px solid @blue;
+			}
+			& img {
+				width: 100%;
+				padding: 5px;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto 0;
+				position: absolute;
+			}
+		}
 	}
 }
 .footer {  
