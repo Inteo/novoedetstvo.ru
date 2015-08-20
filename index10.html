@@ -16,8 +16,11 @@
     <script src="f/js/jquery-1.11.3.min.js"></script>
     <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <link rel="stylesheet" href="f/css/bootstrap.min.css">
+    <link rel="stylesheet" href="f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
     <script src="f/js/bootstrap.min.js"></script>
     <script src="f/js/jquery.menu-aim.js"></script>
+    <script src="f/js/bootstrap-spinner.min.js"></script>
+    <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <link rel="stylesheet" href="f/css/main.css">
     <script src="f/js/common.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
@@ -26,6 +29,14 @@
     $(document).ready(function(){
       $('[data-toggle="popover"]').popover();
     });
+    $(function(){
+      $(".switch__item").click(function(){
+        $(this).closest(".switch").find(".switch__item").removeClass("switch__item_active");
+        $(this).addClass("switch__item_active");
+        $(this).closest(".goods__switch").find(".goods__switch-holder").hide();
+        $(this).closest(".goods__switch").find(".goods__switch-holder").eq($(this).index()).show();
+      })
+    })
     </script>
   </head>
 <body>
@@ -166,7 +177,7 @@
                   <span class="clear-text"></span>
                 </div>
               </form>
-              <div class="goods">
+              <div class="goods clearfix">
                 <ul class="breadcrumbs">
                   <li><a href="#">Главная</a><i class="icon-bread"></i></li>
                   <li><a href="#">Каталог</a><i class="icon-bread"></i></li>
@@ -183,10 +194,166 @@
                         </a><a href="#"><img src="f/i/goods/2.jpg" alt=""></a>
                       </div>
                     </div>
+                    <div class="social-rating">
+                      <a href="#" class="social-rating__item"><i class="icon-odnk"></i>+32</a>
+                      <a href="#" class="social-rating__item"><i class="icon-fb"></i>+10</a>
+                      <a href="#" class="social-rating__item"><i class="icon-vk"></i>+10</a>
+                    </div>
                   </div><div class="goods__info">
                     <p class="goods__article">Артикул 502756</p>
                     <h1 class="goods__name">Щенок «Дружок»</h1>
-                    <a href="#" class="goods__fgos" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="left" data-trigger="focus"><i class="icon-fgos"></i></a>
+                    <a href="#" class="goods__fgos" data-toggle="popover" title="Товар соответствует требованиям ФГОС" data-content="Федеральные государственные образовательные стандарты (ФГОС) — совокупность требований, обязательных при реализации основных образовательных программ начального общего, основного общего, среднего (полного) общего, начального профессионального, среднего профессионального и высшего профессионального образования образовательными учреждениями, имеющими государственную аккредитацию." data-placement="left" data-trigger="focus"><i class="icon-fgos"></i></a>
+                    <div class="goods__rating">
+                      <ul class="rating">
+                        <li class="rating__item rating__item_active">
+                        </li><li class="rating__item rating__item_active">
+                        </li><li class="rating__item rating__item_active">
+                        </li><li class="rating__item rating__item_active">
+                       </li> <li class="rating__item"></li>
+                      </ul>
+                      <a href="#">12 отзывов</a>
+                    </div>
+                    <div class="goods__specifications">
+                      <div class="info-line">
+                        <span class="info-line__name">Бренд</span>
+                        <a href="#" class="info-line__value">YAKI</a>
+                      </div>
+                      <div class="info-line">
+                        <span class="info-line__name">Возраст</span>
+                        <span class="info-line__value">3+</span>
+                      </div>
+                      <div class="info-line">
+                        <span class="info-line__name">Материал</span>
+                        <span class="info-line__value">Пластик, текстиль</span>
+                      </div>
+                      <div class="info-line">
+                        <span class="info-line__name">Размеры</span>
+                        <span class="info-line__value">25 х 18,8 х 23 см</span>
+                      </div>
+                      <div class="info-line">
+                        <span class="info-line__name">Категория товара</span>
+                        <a href="#" class="info-line__value">Малые формы</a>
+                      </div>
+                    </div>
+                    <div class="goods-cart">
+                      <div class="goods-cart__promo">
+                        <span class="goods-cart__promo-num">- 15 %</span>
+                        <span class="goods-cart__promo-text">Вы экономите 500 <span class="rub">&#8399;</span></span>
+                      </div>
+                      <div class="goods-cart__controls">
+                        <div class="goods-cart__price">
+                          <p class="goods-cart__price-new">1200 <span class="rub">&#8399;</span></p>
+                          <span class="goods-cart__price-old">1700 <span class="rub">&#8399;</span></span>
+                        </div>
+                        <div class="goods-cart__btns">
+                          <div class="goods-cart__amount">
+                            <span class="amounter">
+                              <span class="amounter__btn">
+                                <button type="button" data-value="-1" data-target="#spinner4" data-toggle="spinner" onclick="return false;">
+                                  <span class="amounter__sym">-</span>
+                                </button>
+                              </span>
+                              <input type="number" data-ride="spinner" id="spinner4" class="amounter__numb" value="1" data-min="2" onclick="return false;">
+                              <span class="amounter__btn amounter__btn_right">
+                                <button type="button" data-value="1" data-target="#spinner4" data-toggle="spinner" onclick="return false;">
+                                  <span class="amounter__sym">+</span>
+                                </button>
+                              </span>
+                            </span>
+                          </div>
+                          <div class="goods-cart__btn">
+                            <a href="#" class="red-btn"><i class="icon-cart"></i>В корзину</a>
+                          </div>
+                          <p class="goods-cart__hint">Товар продается в кол-ве от 2 штук</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="goods__detail">        
+                  <div class="goods__btns">
+                    <a href="#" class="goods__btn goods__btn_qst">
+                      <span>Не уверены?</span>
+                      <b>Задайте вопрос эксперту</b>
+                      <img src="f/i/goods/btn1.png" alt="">
+                    </a>
+                    <a href="#" class="goods__btn goods__btn_decision">
+                      <b>Решения для педагогов</b>
+                      <img src="f/i/goods/btn2.png" alt="">
+                    </a>
+                  </div>
+                  <div class="goods__switch">
+                    <ul class="switch switch_blue">
+                      <li class="switch__item"><p>Описание</p>
+                      </li><li class="switch__item"><p>Характеристики</p>
+                      </li><li class="switch__item switch__item_active"><p>Отзывы<b>12</b></p>
+                    </ul>
+                    <div class="goods__switch-holder goods__description">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div> 
+                    <div class="goods__switch-holder">
+                      <div class="goods__specifications">
+                        <div class="info-line">
+                          <span class="info-line__name">Бренд</span>
+                          <a href="#" class="info-line__value">YAKI</a>
+                        </div>
+                        <div class="info-line">
+                          <span class="info-line__name">Возраст</span>
+                          <span class="info-line__value">3+</span>
+                        </div>
+                        <div class="info-line">
+                          <span class="info-line__name">Материал</span>
+                          <span class="info-line__value">Пластик, текстиль</span>
+                        </div>
+                        <div class="info-line">
+                          <span class="info-line__name">Размеры</span>
+                          <span class="info-line__value">25 х 18,8 х 23 см</span>
+                        </div>
+                        <div class="info-line">
+                          <span class="info-line__name">Категория товара</span>
+                          <a href="#" class="info-line__value">Малые формы</a>
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="goods__switch-holder goods__switch-holder_active">
+                      <div class="feedback">
+                        <div class="feedback__item">
+                          <div class="feedback__img">
+                            <img src="f/i/feetback/1.jpg" alt="">
+                          </div>
+                          <div class="feedback__detail">
+                            <span class="feedback__name">Анна</span>
+                            <span class="feedback__date">15 марта 2015</span>
+                            <ul class="rating feedback__rating">
+                              <li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                             </li> <li class="rating__item"></li>
+                            </ul>
+                          </div>
+                          <p class="feedback__text">Моей малышке игрушка очень понравилась, активно играет с ней. Не выпускает из рук. Хорошее качество, не рвется, не пачкается, не громкая.</p>
+                        </div>
+                        <div class="feedback__item">
+                          <div class="feedback__img">
+                            <img src="f/i/feetback/2.jpg" alt="">
+                          </div>
+                          <div class="feedback__detail">
+                            <span class="feedback__name">Василиса</span>
+                            <span class="feedback__date">11 апреля 2015</span>
+                            <ul class="rating feedback__rating">
+                              <li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                              </li><li class="rating__item rating__item_active">
+                             </li> <li class="rating__item rating__item_active"></li>
+                            </ul>
+                          </div>
+                          <p class="feedback__text">Купила я эту игрушку спонтанно, искала другую игрушку этой же фирмы, а в том интернет-магазине, где она стоила приемлимо для меня наткнулась на акцию, где этот щенок участвовал в распродаже и стоил 1250 руб.</p>
+                        </div>
+                      </div>
+                      <a href="#feedback" class="pink-btn modal-inline"><i class="icon-feedback"></i>Оставить отзыв</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -363,5 +530,13 @@
       </div>
     </div>
   </footer> 
+  <div class="popups">
+    <div class="popup" id="feedback">
+      <div class="popup__title">
+        <img src="" class="popup__img">
+        <p>Оставить отзыв о товаре</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
