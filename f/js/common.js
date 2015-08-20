@@ -60,4 +60,12 @@ $(function(){
      e.preventDefault();
    }
  });
+  $(function(){
+    $(".goods-carou a").click(function(){
+      $(this).closest(".goods-carou").find("a").removeClass("selected");
+      $(this).addClass("selected");
+      $(this).closest(".goods-carou").find(".goods-carou__holder img").attr("src", $(this).find("img").attr("src"));
+      return false;
+    });
+  });
 })
