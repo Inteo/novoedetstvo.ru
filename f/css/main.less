@@ -118,18 +118,109 @@ input[type='radio']:checked + label::after {
   background-position: -200px 0;
 }
 .fancybox-inner {
-	border-radius: 20px;
+	border-radius: 20px;	
+}
+.fancybox-close {
+	top: -40px;
+	right: -40px;
+	width: 40px;
+	height: 40px;
+	background: @blue;
+	border-radius: 50%;
+	&:before {
+		width: 12px;
+		height: 13px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		content: '';
+		background: url(../../f/i/icons.png) -181px -163px;
+		display: inline-block;
+	}
+	&:hover {
+		background: @pink;
+	}
+}
+.popups {
+	display: none;
 }
 .popup {
 	width: 460px;
+	border: 3px solid @blue;
+	overflow: hidden;
+	border-radius:  0 0 20px 20px;
 	&__title {
 		height: 167px;
 		background: @blue;
 		position: relative;
+		padding: 40px 30px;
 		& img {
 			position: absolute;
 			bottom: 0;
-			left: 0;
+			left: 30px;
+		}
+		&-text {
+			font-size: 30px;
+			line-height: 40px;
+			color: #fff;
+			font-weight: bold;
+			padding-left: 140px;
+		}
+		&-bubble {
+			padding: 25px 30px;
+			border-radius: 15px;
+			margin-top: -15px;
+			border: 2px solid #03a9f4;
+			position: relative;
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+			&:before {
+				content: '';
+				position: absolute;
+				left: -38px;
+				width: 38px;
+				height: 30px;
+				bottom: 30px;
+				background: url(../../f/i/icons.png) 0 -345px;
+			}
+		}
+	}
+	&__content {
+		padding: 40px 40px 35px;
+		background: none;
+	}
+	&__btn {
+		text-align: center;
+		& .blue-btn {
+			display: inline-block;
+			padding: 5px 20px;
+		}
+	}
+	&__rating {
+		background: #e3f2fd;
+		padding: 10px 20px;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		&-text {
+			margin-right: 20px;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 16px;
+			color: #546e7a;
+		}
+	}
+	&__input {
+		margin-bottom: 20px;
+		& .input {
+			width: 100%;
+		}
+		& .text-area {
+			min-height: 150px;
+			margin-bottom: 10px !important;
 		}
 	}
 }
@@ -142,6 +233,35 @@ input[type='radio']:checked + label::after {
 	box-shadow: none !important;
 	margin-bottom: 0 !important;
 	font: 16px/20px 'Open Sans', sans-serif !important;
+	&_success {
+		border: 2px solid @blue !important;
+		padding-right: 35px !important;
+	}
+	&_error {
+		border: 2px solid #f44336 !important;
+		padding-right: 35px !important;
+	}
+}
+.input-holder {
+	position: relative;
+	margin-bottom: 20px;
+	& .input {
+		width: 100%;
+	}
+}
+.input-success,
+.input-error {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	width: 20px;
+	height: 20px;
+	background: url(../../f/i/icons.png) -193px -272px;
+}
+.input-error {
+	background-position: -193px -294px;
 }
 .text-area {
 	resize: none;
@@ -497,6 +617,12 @@ a:hover .icon-big-down {
 	height: 16px;
 	background-position: -84px -104px;
 	margin: -3px 8px 0 0;
+	&_blue {
+		background-position: -193px -256px;
+	}
+}
+a:hover .icon-mail_blue {
+	background-position: -84px -104px;
 }
 .icon-delivery {
 	width: 23px;
@@ -3440,6 +3566,29 @@ a:hover .icon-right-arrow3 {
 		background: url(../../f/i/icons.png) -156px -179px;
 		&_active {
 			background-position: -179px -179px;
+		}
+	}
+	&_action {
+		margin-left: -10px;
+	}
+	&_action &__item {
+		width: auto;
+		height: auto;
+		background: none;
+		padding-left: 10px;
+		margin: 0;
+		cursor: pointer;
+		& a {
+			width: 30px;
+			height: 29px;
+			display: inline-block;
+			vertical-align: text-top;
+			background: url(../../f/i/icons.png);
+			background-position: -102px -304px;
+		}
+		&_active a,
+		&_hover a {
+			background-position: -140px -304px;
 		}
 	}
 }

@@ -272,12 +272,12 @@
                 </div>
                 <div class="goods__detail">        
                   <div class="goods__btns">
-                    <a href="#" class="goods__btn goods__btn_qst">
+                    <a href="#question" class="goods__btn goods__btn_qst modal-inline">
                       <span>Не уверены?</span>
                       <b>Задайте вопрос эксперту</b>
                       <img src="f/i/goods/btn1.png" alt="">
                     </a>
-                    <a href="#" class="goods__btn goods__btn_decision">
+                    <a href="#thanks" class="goods__btn goods__btn_decision modal-inline">
                       <b>Решения для педагогов</b>
                       <img src="f/i/goods/btn2.png" alt="">
                     </a>
@@ -533,8 +533,68 @@
   <div class="popups">
     <div class="popup" id="feedback">
       <div class="popup__title">
-        <img src="" class="popup__img">
-        <p>Оставить отзыв о товаре</p>
+        <img src="f/i/popup/1.png" class="popup__img">
+        <div class="popup__title-text">Оставить отзыв о товаре</div>
+      </div>
+      <div class="popup__content">
+        <div class="popup__rating">
+          <span class="popup__rating-text">Ваша оценка</span>
+          <ul class="rating rating_action">
+            <li class="rating__item"><a href="#">&nbsp;</a>
+            </li><li class="rating__item"><a href="#">&nbsp;</a>
+            </li><li class="rating__item"><a href="#">&nbsp;</a>
+            </li><li class="rating__item"><a href="#">&nbsp;</a>
+            </li><li class="rating__item"><a href="#">&nbsp;</a></li>
+          </ul>
+        </div>
+        <div class="popup__input input-holder">
+          <input type="text" class="input input_error" placeholder="Как Вас зовут">
+          <span class="input-error"></span>
+        </div>
+        <div class="popup__input input-holder">
+          <input type="text" class="input input_success" placeholder="Электронная почта">
+          <span class="input-success"></span>
+        </div>
+        <div class="popup__input input-holder">
+          <textarea name="" class="input text-area" placeholder="Ваш отзыв"></textarea>
+        </div>
+        <div class="popup__btn">
+          <a href="#" class="blue-btn blue-btn_small"><i class="icon-mail icon-mail_blue"></i>Отправить</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="question">
+      <div class="popup__title">
+        <img src="f/i/popup/2.png" class="popup__img">
+        <div class="popup__title-text">Задать вопрос специалисту</div>
+      </div>
+      <div class="popup__content">
+        <div class="popup__input input-holder">
+          <input type="text" class="input" placeholder="Как Вас зовут">
+        </div>
+        <div class="popup__input input-holder">
+          <input type="text" class="input" placeholder="Телефон">
+        </div>
+        <div class="popup__input input-holder">
+          <input type="text" class="input" placeholder="Электронная почта">
+        </div>
+        <div class="popup__input input-holder">
+          <textarea name="" class="input text-area" placeholder="Ваш вопрос"></textarea>
+        </div>
+        <div class="popup__btn">
+          <a href="#" class="blue-btn blue-btn_small"><i class="icon-mail icon-mail_blue"></i>Отправить</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="thanks">
+      <div class="popup__title">
+        <img src="f/i/popup/2.png" class="popup__img">
+        <div class="popup__title-text"><p class="popup__title-bubble">Мы ответим Вам в течении суток :)</p></div>
+      </div>
+      <div class="popup__content">
+        <div class="popup__btn">
+          <a href="#" class="blue-btn blue-btn_small">Спасибо</a>
+        </div>
       </div>
     </div>
   </div>
