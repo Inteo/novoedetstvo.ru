@@ -23,7 +23,48 @@
     <script src="f/js/common.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,italic,bold,bolditalic&subset=cyrillic" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic&subset=all" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <script>
+      function initialize() {
+        var Pos1 = new google.maps.LatLng(57.589908, 39.876545);
+        var map = new google.maps.Map(document.getElementById("map_canvas"), {
+          zoom: 18,
+          center: Pos1,
+          mapTypeControl: true,
+          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+          navigationControl: true,
+          navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var Mark = new google.maps.MarkerImage("f/i/marker.png",
+          new google.maps.Size(70,82),
+          new google.maps.Point(0,0),
+          new google.maps.Point(0,82)
+        );
+        var Marker1 = new google.maps.Marker({
+          position: Pos1,
+          map: map,
+          icon: Mark,
+          title:"Pos1"
+        });
+
+        var Pos2 = new google.maps.LatLng(57.689908, 39.976545);
+        var map2 = new google.maps.Map(document.getElementById("map_canvas2"), {
+          zoom: 18,
+          center: Pos2,
+          mapTypeControl: true,
+          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+          navigationControl: true,
+          navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        var Marker2 = new google.maps.Marker({
+          position: Pos2,
+          map: map2,
+          icon: Mark,
+          title:"Pos2"
+        });
+      }
       $(document).ready(function(){
         $(".detail-slider__holder").carouFredSel({
           responsive: true,
@@ -37,15 +78,16 @@
         });
       });
       $(function(){
-      	$(".detail__more").click(function(){
-      		$(this).closest(".detail__description").find(".detail__text").addClass("detail__text_open");
-      		$(this).hide();
-      		return false;
-      	})
-      });
+      $(".switch__item").click(function(){
+        $(this).closest(".switch").find(".switch__item").removeClass("switch__item_active");
+        $(this).addClass("switch__item_active");
+        $(this).closest(".detail__map").find(".detail__map-holder").removeClass("detail__map-holder_active");
+        $(this).closest(".detail__map").find(".detail__map-holder").eq($(this).index()).addClass("detail__map-holder_active");
+      })
+    })
     </script>
   </head>
-<body>
+<body  onload='initialize()'>
   <div class="wrap clearfix">  
     <header class="header">
       <div class="holder holder_header">
@@ -190,10 +232,10 @@
               </ul>
               <h1 class="section-title">Методика Марии Монтессори</h1>
               <div class="detail">
-              	<div class="detail-slider">
+              	<div class="detail-slider detail-slider_photo">
             			<div class="detail-slider__holder">
             				<div class="detail-slider__item">
-            					<img src="f/i/slider-temp.jpg" alt="">
+            					<img src="f/i/slider-temp2.jpg" alt="">
             				</div>
             				<div class="detail-slider__item">
             					<img src="f/i/slider-temp.jpg" alt="">
@@ -202,152 +244,105 @@
 									<div class="detail-slider__left"></div>
 									<div class="detail-slider__right"></div>
               	</div>
-              	<div class="detail__holder">
+              	<div class="detail__holder detail__holder_minbot">
               		<div class="detail__description">
-	              		<p class="detail__title">О методе</p>
-	              		<div class="detail__text detail__text_min">
+	              		<p class="detail__title detail__title_big">О методе</p>
+	              		<div class="detail__text">
 	              			<p>Смысл метода, разработанного итальянским педагогом, заключается в том, чтобы стимулировать в ребенке самобытность, самостоятельность, самовоспитание, саморазвитие и самообучение – т.е. те вещи, которые в ребенке заложены природой. А поскольку все эти способности проявляются уже в раннем детстве, то именно этот период и считается благодатной почвой для воспитания талантов и способностей.</p><p>Комнаты для обучения, созданные по методике Монтессори, разделены на зоны: практическая, учебная, сенсорная и двигательная. В первой малыши учатся самостоятельно обуваться, одеваться, пересыпать крупы, чистить тряпкой грязь. Во второй малыши развивают мышление и логику с помощью различных материй – географии, математики, естественно-научных предметов. В третьей, сенсорной зоне, дети изучают меры, формы, размеры и свойства предметов. А в четвертой малыши развивают ловкость, внимание и концентрацию.</p>
 	              		</div>
-	              		<a href="#" class="detail__more">Читать дальше<i class="icon-right-arrow3"></i></a>
 	              	</div>
-	              	<div class="detail__controls">
-	              		<div class="detail__controls-btns">
-	              			<a href="#" class="detail__controls-btn red-btn"><i class="icon-mail"></i>Подобрать оборудование</a>
-              				<a href="#" class="blue-btn blue-btn_small"><i class="icon-educator-face2"></i>Консультация</a>
-	              		</div>
-              			<p class="detail__controls-text"><i class="icon-star2"></i>Наши специалисты готовы подобрать необходимое оборудование исходя из ваших пожеланий и в условиях определенного вами бюджета</p>
-              		</div>
+                  <div class="comment">
+                    <p class="icon-comment2 comment__ico"></p>
+                    <p class="comment__text">Именно культура воспитания и социальные условия жизни, которые складываются из общения, обучающих игр, развивающего влияния окружающей среды, имеют особую значимость для ребенка. При этом современный интерьер и дизайн внутренних помещений: оборудование, мебель, игрушки, пособия, - рассматриваются как необходимые составляющие предметно-пространственной среды.</p>
+                    <p class="comment__name">«Воспитание ребенка», Андреева А.Н.</p>
+                  </div>
+                  <p class="detail__title">Заголовок (Н3)</p>
+                  <div class="detail__text detail__text_maxbot">
+                    <p>Имея опыт работы более 10 лет в сфере оснащения образовательных учреждений разного уровня (от сада до ВУЗа), взаимодействуя с педагогами, мы решили уделить особое (тщательное) внимание самым маленьким воспитанникам – нашим дошкольникам.</p>
+                  </div>
+                  <div class="detail__hints">
+                    <p class="detail__hint">Именно для этого наша команда создала проект «Новое детство», основной целью которого является оптимизация развития системы дошкольного образования путем поиска, внедрения и освоения инноваций.</p>
+                    <p class="detail__hint detail__hint_pink">Мы открыты к диалогу и плодотворной работе на благо наших маленьких последователей!</p>
+                  </div>
+                  <p class="detail__title">Списки нумерованные и маркированные</p>
+                  <div class="detail__half">
+                    <ul class="marked-list">
+                      <li>Наличный расчет при получении заказа</li>
+                      <li>Платежные системы</li>
+                      <li>Безналичный способ оплаты на основании выставленного счета</li>
+                    </ul>
+                  </div><div class="detail__half">
+                    <ul class="marked-list marked-list_num">
+                      <li>Наличный расчет при получении заказа</li>
+                      <li>Платежные системы</li>
+                      <li>Безналичный способ оплаты на основании выставленного счета</li>
+                    </ul>
+                  </div>
+                  <p class="detail__title detail__title_maxbot">Карты</p>
               	</div>
-              </div>
-              <div class="catalog catalog_2line">
-                <div class="catalog__holder">
-                  <div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Ботинки обучающие</span>
-                      <span class="catalog__price">1 590 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
-                      <span class="catalog__price">500 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт № 1</span>
-                      <span class="catalog__price">600 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/2.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Ботинки обучающие</span>
-                      <span class="catalog__price">1 590 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/3.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт «Мышки в сыре»</span>
-                      <span class="catalog__price">500 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/4.jpg" alt=""></span>
-                      <span class="catalog__brand">МДИ</span>
-                      <span class="catalog__name">Лабиринт № 1</span>
-                      <span class="catalog__price">600 <b class="rub">&#8399;</b></span>
-                    </a>
-                  </div><div class="catalog__item">
-                    <a href="#" class="catalog__link">
-                      <span class="catalog__img"><img src="f/i/catalog/1.jpg" alt=""></span>
-                      <span class="catalog__brand">K's Kids</span>
-                      <span class="catalog__name">Лабиринт «Мышка»</span>
-                      <span class="catalog__price">320 <b class="rub">&#8399;</b></span>
-                    </a>
+                <div class="detail__map">
+                  <div class="detail__holder detail__map-switch">
+                    <ul class="switch switch_blue">
+                      <li class="switch__item switch__item_active"><p>Ярославль</p>
+                      </li><li class="switch__item"><p>Москва</p></li>
+                    </ul>
+                  </div>
+                  <div class="detail__map-wrap">
+                    <div class="detail__map-holder detail__map-holder_active" id="map_canvas"></div>
+                    <div class="detail__map-holder" id="map_canvas2"></div>
                   </div>
                 </div>
-              </div>
-              <div class="catalog-btns">
-                <div class="catalog-btns__item catalog-btns__item_pay">
-                  <a href="#" class="catalog-btns__link">
-                    <span class="catalog-btns__info">
-                      <b class="catalog-btns__title">Доставка и оплата</b>
-                      <b class="catalog-btns__text">Мы осуществляем доставку товара в течении 7-10 дней после подтверждения заказа</b>
-                    </span><span class="catalog-btns__img">
-                      <img src="f/i/catalog-btns/1.png" alt="">
-                    </span>
-                  </a>
-                </div><div class="catalog-btns__item catalog-btns__item_educators">
-                  <a href="#" class="catalog-btns__link">
-                    <span class="catalog-btns__info">
-                      <b class="catalog-btns__title">Педагогам</b>
-                      <b class="catalog-btns__text">Комплексные решения по оснащению ДОУ, решения по ФГОС, а так же учебная литература, статьи и программы</b>
-                    </span><span class="catalog-btns__img">
-                      <img src="f/i/catalog-btns/2.png" alt="">
-                    </span>
-                  </a>
+                <div class="detail__holder">
+                  <p class="detail__title detail__title_maxbot">Таблица</p>
+                  <div class="table">
+                    <div class="table__holder">
+                      <div class="table__row table__row_title">
+                        <div class="table__cell">Параметры</div>
+                        <div class="table__cell">Значение</div>
+                        <div class="table__cell">Да или нет</div>
+                      </div>
+                      <div class="table__row">
+                        <div class="table__cell">Каркас</div>
+                        <div class="table__cell">МДФ</div>
+                        <div class="table__cell"><i class="icon-yes"></i></div>
+                      </div>
+                      <div class="table__row">
+                        <div class="table__cell">Облицовка</div>
+                        <div class="table__cell">Лакокрасочное покрытие</div>
+                        <div class="table__cell"><i class="icon-yes"></i></div>
+                      </div>
+                      <div class="table__row">
+                        <div class="table__cell">Возраст</div>
+                        <div class="table__cell">От 2 лет</div>
+                        <div class="table__cell"><i class="icon-no"></i></div>
+                      </div>
+                      <div class="table__row">
+                        <div class="table__cell">Ограничения</div>
+                        <div class="table__cell">Нет</div>
+                        <div class="table__cell"><i class="icon-yes"></i></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="video">
+                  <div class="video__holder">
+                    <img src="f/i/slider-temp.jpg" alt="">
+                  </div>
+                  <p class="video__description detail__holder">Видео о методике Марии Монтессори</p>
+                </div>
+              </div>
+              <div class="pagination">
+                <a href="#" class="pagination__item_left pagination__item"><i class="icon-left-arrow"></i></a>
+                <a href="#" class="pagination__item">1</a>
+                <a href="#" class="pagination__item">2</a>
+                <span class="pagination__item pagination__item_active">3</span>
+                <a href="#" class="pagination__item">4</a>
+                <a href="#" class="pagination__item">5</a>
+                <a href="#" class="pagination__item">...</a>
+                <a href="#" class="pagination__item_right  pagination__item"><i class="icon-right-arrow2"></i></a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="features features_white">
-      	<div class="holder features__holder">
-	        <div class="features__item">
-	          <div class="features__img">
-	            <img src="f/i/features/1.png" alt="">
-	          </div>
-	          <p class="features__title">Гарантия обмена</p>
-	          <p class="features__text">замена товара надлежащего качества</p>
-	        </div>
-	        <div class="features__item">
-	          <div class="features__img">
-	            <img src="f/i/features/2.png" alt="">
-	          </div>
-	          <p class="features__title">Безопасность личных данных</p>
-	        </div>
-	        <div class="features__item">
-	          <div class="features__img">
-	            <img src="f/i/features/3.png" alt="">
-	          </div>
-	          <p class="features__title">Система бонусов</p>
-	          <p class="features__text">индивидуальные программы лояльности клиентов</p>
-	        </div>
-	        <div class="features__item">
-	          <div class="features__img">
-	            <img src="f/i/features/4.png" alt="">
-	          </div>
-	          <p class="features__title">Лучшая цена</p>
-	          <p class="features__text">накопительные скидки, выгодные акции</p>
-	        </div>
         </div>
       </div>
     </div>
