@@ -67,5 +67,35 @@ $(function(){
       $(this).closest(".goods-carou").find(".goods-carou__holder img").attr("src", $(this).find("img").attr("src"));
       return false;
     });
+    $('.rating_action .rating__item').hover(
+      function() {
+        $(this).prevAll().andSelf().addClass('rating__item_hover');
+      },
+      function() {
+        $(this).prevAll().andSelf().removeClass('rating__item_hover');
+      }
+    );
+    $('.rating_action .rating__item').click(function(){
+      $(this).prevAll().andSelf().addClass('rating__item_active');
+      $(this).nextAll().removeClass('rating__item_active');
+      return false;
+    });
   });
+})
+$(document).ready(function(){
+  $(".modal-inline").fancybox({
+    type: 'inline',
+    fixed:false,
+    maxWidth: "100%",
+    title: '',
+    padding: 0,
+    autoResize: false,
+    autoCenter: false,
+    fitToView: false,
+    helpers: {
+      overlay: {
+        fixed: false
+      }
+    }
+  }); 
 })
